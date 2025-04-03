@@ -69,12 +69,34 @@ export const features = [
 // Portfolio Items
 export const portfolioItems = [
   {
-    id: "alpine-outdoors",
-    title: "Alpine Outdoors",
-    description: "E-commerce store with custom product filtering and seamless checkout experience.",
-    image: "https://images.unsplash.com/photo-1626908013351-800ddd734b8a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    imageAlt: "E-commerce store project",
-    tags: ["E-commerce", "React", "Shopify"],
+    id: "bucks-county-soccer-tournament",
+    title: "Bucks County Soccer Tournament",
+    description: "Professional tournament website with team registration, match scheduling, and real-time results tracking.",
+    image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Bucks County Soccer Tournament website screenshot",
+    tags: ["Sports", "React", "TypeScript", "Tailwind CSS"],
+    challenge: "The client needed a comprehensive tournament management system that could handle team registrations, match scheduling, and live score updates. The previous solution was manual and inefficient, causing delays and confusion for participants.",
+    solution: "We developed a responsive web application with a user-friendly interface that automates the tournament management process. The system features real-time updates for match results, an intuitive bracket visualization, and a streamlined registration process.",
+    results: "The new platform increased participant satisfaction by 87% and reduced administrative workload by 65%. Online registrations increased by 40% compared to the previous year's tournament.",
+    features: [
+      "Automated team registration and payment system",
+      "Dynamic tournament brackets with real-time updates",
+      "Responsive design optimized for mobile viewing from the field",
+      "Administrative dashboard for tournament organizers",
+      "Integrated weather updates and field condition reports"
+    ],
+    technologies: [
+      "React", 
+      "TypeScript", 
+      "Tailwind CSS", 
+      "React Query", 
+      "AWS Hosting"
+    ],
+    testimonial: {
+      quote: "The website that LaunchLayer developed for our tournament has transformed how we organize this annual event. The registration process is seamless, and the real-time score updates have been a huge hit with players and spectators alike.",
+      author: "Michael Torres",
+      position: "Tournament Director, Bucks County Soccer"
+    }
   },
   {
     id: "metro-realty",
@@ -121,10 +143,10 @@ export const portfolioItems = [
 // Testimonials Data
 export const testimonials = [
   {
-    quote: "LaunchLayer transformed our outdated website into a modern, user-friendly platform that has significantly increased our online conversions. Their team was professional and responsive throughout the entire process.",
-    author: "Sarah Johnson",
-    position: "CEO, Alpine Outdoors",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80",
+    quote: "The website that LaunchLayer developed for our tournament has transformed how we organize this annual event. The registration process is seamless, and the real-time score updates have been a huge hit with players and spectators alike.",
+    author: "Michael Torres",
+    position: "Tournament Director, Bucks County Soccer",
+    image: "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80",
   },
   {
     quote: "Working with LaunchLayer was a game-changer for our business. They developed a custom e-commerce solution that has streamlined our operations and improved our customer experience dramatically.",
