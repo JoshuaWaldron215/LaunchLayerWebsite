@@ -81,7 +81,7 @@ const About = () => {
               <div className="w-32 h-32 rounded-full bg-accent mx-auto mb-6 flex items-center justify-center text-white text-4xl font-bold">
                 AK
               </div>
-              <h3 className="text-2xl font-bold text-center mb-2">Aqeel Khan</h3>
+              <h3 className="text-2xl font-bold text-center mb-2">Aqeel Bacchus</h3>
               <p className="text-center text-accent font-medium mb-4">Co-Founder & Lead Developer</p>
               <p className="text-center mb-4">
                 <span className="inline-flex items-center">
@@ -116,17 +116,10 @@ const About = () => {
                 <p className="text-sm text-gray-600">(HTML, CSS, JavaScript)</p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-medium mb-1">WordPress Design & Customization</h3>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h3 className="font-medium mb-1">Lightning-Fast Landing Pages</h3>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h3 className="font-medium mb-1">Site Redesigns & Modernization</h3>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-medium mb-1">Fast Turnarounds with Smart Tools</h3>
-                <p className="text-sm text-gray-600">(AI, Replit, WordPress, etc.)</p>
               </div>
             </div>
           </div>
