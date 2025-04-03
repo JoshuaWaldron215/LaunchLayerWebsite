@@ -69,6 +69,7 @@ export const features = [
 // Portfolio Items
 export const portfolioItems = [
   {
+    id: "alpine-outdoors",
     title: "Alpine Outdoors",
     description: "E-commerce store with custom product filtering and seamless checkout experience.",
     image: "https://images.unsplash.com/photo-1626908013351-800ddd734b8a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
@@ -76,6 +77,7 @@ export const portfolioItems = [
     tags: ["E-commerce", "React", "Shopify"],
   },
   {
+    id: "metro-realty",
     title: "MetroRealty",
     description: "Property listing website with advanced search and interactive map integration.",
     image: "https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
@@ -83,6 +85,7 @@ export const portfolioItems = [
     tags: ["Real Estate", "Vue.js", "Google Maps API"],
   },
   {
+    id: "fintrack-pro",
     title: "FinTrack Pro",
     description: "Financial dashboard with real-time data visualization and reporting tools.",
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
@@ -90,6 +93,7 @@ export const portfolioItems = [
     tags: ["Fintech", "React", "D3.js"],
   },
   {
+    id: "bistro-37",
     title: "Bistro 37",
     description: "Restaurant website with online reservation system and digital menu.",
     image: "https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
@@ -97,6 +101,7 @@ export const portfolioItems = [
     tags: ["Restaurant", "WordPress", "Custom Theme"],
   },
   {
+    id: "taskflow",
     title: "TaskFlow",
     description: "SaaS product website with interactive demos and subscription management.",
     image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
@@ -104,6 +109,7 @@ export const portfolioItems = [
     tags: ["SaaS", "Next.js", "Stripe"],
   },
   {
+    id: "edusphere",
     title: "EduSphere",
     description: "Online learning platform with course management and student progress tracking.",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",

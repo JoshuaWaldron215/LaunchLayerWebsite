@@ -85,6 +85,7 @@ const Portfolio = () => {
                   >
                     <HoverCard whileHoverScale={1.03} whileHoverElevate={10}>
                       <PortfolioItem 
+                        id={item.id}
                         title={item.title}
                         description={item.description}
                         image={item.image}

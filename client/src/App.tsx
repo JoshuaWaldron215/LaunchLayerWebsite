@@ -9,6 +9,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import Home from "@/pages/Home";
 import Services from "@/pages/Services";
 import Portfolio from "@/pages/Portfolio";
+import ProjectDetailPage from "@/pages/ProjectDetailPage";
 import Contact from "@/pages/Contact";
 import About from "@/pages/About";
 import NotFound from "@/pages/not-found";
@@ -36,6 +37,7 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/services" component={Services} />
         <Route path="/portfolio" component={Portfolio} />
+        <Route path="/portfolio/:id" component={ProjectDetailPage} />
         <Route path="/contact" component={Contact} />
         <Route path="/about" component={About} />
         <Route component={NotFound} />
