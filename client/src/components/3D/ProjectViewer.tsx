@@ -1,7 +1,8 @@
-import { useRef, useState, useEffect, Suspense } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { useRef, useState, useEffect, Suspense, useMemo } from 'react';
+import { Canvas, useFrame, useThree, useLoader } from '@react-three/fiber';
 import { OrbitControls, PresentationControls, useTexture, Environment, Html } from '@react-three/drei';
 import * as THREE from 'three';
+import { TextureLoader } from 'three';
 import { motion } from 'framer-motion';
 
 // Device frame component that will display our website texture
@@ -69,11 +70,43 @@ interface ProjectSceneProps {
 }
 
 const ProjectScene = ({ projects, selectedProject, setSelectedProject }: ProjectSceneProps) => {
-  const textures = useTexture(
-    Object.fromEntries(
-      projects.map(project => [project.id, project.image])
-    )
+  // Create fallback texture
+  const fallbackTexture = useMemo(() => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 512;
+    canvas.height = 512;
+    const ctx = canvas.getContext('2d');
+    if (ctx) {
+      // Fill with a light color
+      ctx.fillStyle = '#f8f9fa';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Add some text
+      ctx.fillStyle = '#2B6CB0';
+      ctx.font = 'bold 24px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('LaunchLayer', canvas.width / 2, canvas.height / 2 - 20);
+      ctx.font = '18px Arial';
+      ctx.fillText('Web Development', canvas.width / 2, canvas.height / 2 + 20);
+    }
+    
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.needsUpdate = true;
+    return texture;
+  }, []);
+  
+  // Try to load all project textures
+  const textureInput = Object.fromEntries(
+    projects.map(project => [project.id, project.image])
   );
+  
+  // Type assertion to help TypeScript understand the structure
+  let textures = {} as Record<string, THREE.Texture>;
+  try {
+    textures = useTexture(textureInput) as Record<string, THREE.Texture>;
+  } catch (error) {
+    console.error("Error loading textures:", error);
+  }
   
   // Calculate positions in a circle
   const getPosition = (index: number, total: number): [number, number, number] => {
@@ -81,6 +114,16 @@ const ProjectScene = ({ projects, selectedProject, setSelectedProject }: Project
     const radius = 5;
     return [Math.sin(angle) * radius, 0, Math.cos(angle) * radius];
   };
+  
+  // Create a map of valid textures using fallback when needed
+  const validTextures = useMemo(() => {
+    const result: Record<string, THREE.Texture> = {};
+    projects.forEach(project => {
+      // Use the loaded texture or fallback
+      result[project.id] = textures[project.id] || fallbackTexture;
+    });
+    return result;
+  }, [textures, projects, fallbackTexture]);
   
   return (
     <>
@@ -93,7 +136,7 @@ const ProjectScene = ({ projects, selectedProject, setSelectedProject }: Project
         return (
           <Device 
             key={project.id}
-            texture={textures[project.id]}
+            texture={validTextures[project.id]}
             position={position}
             rotation={rotation}
             scale={scale}
