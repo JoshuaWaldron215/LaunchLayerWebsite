@@ -4,3 +4,4 @@ export { default as Stagger, StaggerItem } from "./Stagger";
 export { default as ParallaxScroll } from "./ParallaxScroll";
 export { default as TextReveal } from "./TextReveal";
 export { default as HoverCard } from "./HoverCard";
+export { default as CountUpAnimation } from "./CountUpAnimation";

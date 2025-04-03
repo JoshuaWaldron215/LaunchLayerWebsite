@@ -1,7 +1,18 @@
 import { Link } from "wouter";
+import { motion } from "framer-motion";
 import { portfolioItems } from "@/lib/data";
 import PortfolioItem from "@/components/PortfolioItem";
 import SEO from "@/components/SEO";
+import { 
+  FadeIn, 
+  ScaleIn, 
+  Stagger, 
+  StaggerItem, 
+  ParallaxScroll, 
+  TextReveal,
+  HoverCard,
+  CountUpAnimation
+} from "@/components/animations";
 
 const Portfolio = () => {
   // JSON-LD for Portfolio Page
@@ -40,30 +51,52 @@ const Portfolio = () => {
         jsonLd={portfolioJsonLd}
       />
       {/* Portfolio Header */}
-      <section className="py-20 px-8 bg-gradient-to-br from-secondary to-primary">
+      <section className="py-20 px-8 bg-gradient-to-br from-secondary to-primary overflow-hidden">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Portfolio</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Explore our recent projects and see how we've helped businesses transform their digital presence.
-          </p>
+          <TextReveal 
+            text="Our Portfolio"
+            tag="h1"
+            className="text-4xl md:text-5xl font-bold mb-6"
+            duration={0.8}
+            delay={0.1}
+          />
+          <FadeIn 
+            direction="up" 
+            delay={0.5} 
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
+          >
+            <p>
+              Explore our recent projects and see how we've helped businesses transform their digital presence.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
       {/* Portfolio Grid */}
-      <section className="section-padding bg-white">
+      <section className="py-20 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {portfolioItems.map((item, index) => (
-              <PortfolioItem 
-                key={index}
-                title={item.title}
-                description={item.description}
-                image={item.image}
-                imageAlt={item.imageAlt}
-                tags={item.tags}
-              />
-            ))}
-          </div>
+          <Stagger staggerDelay={0.15}>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {portfolioItems.map((item, index) => (
+                <StaggerItem key={index} direction="up">
+                  <ScaleIn 
+                    initialScale={0.9} 
+                    duration={0.7}
+                  >
+                    <HoverCard whileHoverScale={1.03} whileHoverElevate={10}>
+                      <PortfolioItem 
+                        title={item.title}
+                        description={item.description}
+                        image={item.image}
+                        imageAlt={item.imageAlt}
+                        tags={item.tags}
+                      />
+                    </HoverCard>
+                  </ScaleIn>
+                </StaggerItem>
+              ))}
+            </div>
+          </Stagger>
         </div>
       </section>
 
@@ -71,25 +104,38 @@ const Portfolio = () => {
       <section className="py-20 px-8 bg-secondary">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Trusted By</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We've had the pleasure of working with a diverse range of clients across multiple industries.
-            </p>
+            <FadeIn direction="up">
+              <h2 className="text-3xl font-bold mb-4">Trusted By</h2>
+            </FadeIn>
+            <FadeIn direction="up" delay={0.2}>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                We've had the pleasure of working with a diverse range of clients across multiple industries.
+              </p>
+            </FadeIn>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 place-items-center">
-            <div className="text-5xl text-gray-400 hover:text-accent transition-colors duration-300">
-              <i className="fab fa-amazon"></i>
-            </div>
-            <div className="text-5xl text-gray-400 hover:text-accent transition-colors duration-300">
-              <i className="fab fa-microsoft"></i>
-            </div>
-            <div className="text-5xl text-gray-400 hover:text-accent transition-colors duration-300">
-              <i className="fab fa-spotify"></i>
-            </div>
-            <div className="text-5xl text-gray-400 hover:text-accent transition-colors duration-300">
-              <i className="fab fa-slack"></i>
-            </div>
+            {[
+              { icon: "fab fa-amazon", delay: 0.1 },
+              { icon: "fab fa-microsoft", delay: 0.2 },
+              { icon: "fab fa-spotify", delay: 0.3 },
+              { icon: "fab fa-slack", delay: 0.4 }
+            ].map((item, index) => (
+              <FadeIn key={index} direction="up" delay={item.delay}>
+                <motion.div 
+                  className="text-5xl text-gray-400 hover:text-accent transition-colors duration-300"
+                  whileHover={{ 
+                    scale: 1.2,
+                    rotate: [-5, 5, 0],
+                    transition: { 
+                      rotate: { duration: 0.5, ease: "easeInOut" } 
+                    }
+                  }}
+                >
+                  <i className={item.icon}></i>
+                </motion.div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
@@ -97,33 +143,79 @@ const Portfolio = () => {
       {/* Project Stats */}
       <section className="py-20 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-5xl font-bold text-accent mb-2">50+</div>
-              <p className="text-gray-600">Projects Completed</p>
+          <Stagger staggerDelay={0.2}>
+            <div className="grid md:grid-cols-3 gap-8 text-center">
+              {[
+                { number: "50+", text: "Projects Completed" },
+                { number: "99%", text: "Client Satisfaction" },
+                { number: "5+", text: "Years Experience" }
+              ].map((stat, index) => (
+                <StaggerItem key={index} direction="up">
+                  <div>
+                    <motion.div 
+                      className="text-5xl font-bold text-accent mb-2"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ 
+                        opacity: 1, 
+                        y: 0,
+                        transition: {
+                          duration: 0.8,
+                          ease: "easeOut"
+                        }
+                      }}
+                      viewport={{ once: true }}
+                    >
+                      <CountUpAnimation 
+                        targetNumber={stat.number} 
+                        duration={2} 
+                      />
+                    </motion.div>
+                    <motion.p 
+                      className="text-gray-600"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ 
+                        opacity: 1,
+                        transition: {
+                          duration: 0.5,
+                          delay: 0.3
+                        }
+                      }}
+                      viewport={{ once: true }}
+                    >
+                      {stat.text}
+                    </motion.p>
+                  </div>
+                </StaggerItem>
+              ))}
             </div>
-            <div>
-              <div className="text-5xl font-bold text-accent mb-2">99%</div>
-              <p className="text-gray-600">Client Satisfaction</p>
-            </div>
-            <div>
-              <div className="text-5xl font-bold text-accent mb-2">5+</div>
-              <p className="text-gray-600">Years Experience</p>
-            </div>
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 px-8 bg-accent text-white">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Let's Create Your Next Project</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Ready to join our growing list of satisfied clients? Contact us today to discuss your project.
-          </p>
-          <Link href="/contact" className="inline-block bg-white text-accent hover:bg-gray-100 px-8 py-4 rounded-lg transition-colors duration-300 font-medium">
-            Start Your Project
-          </Link>
+          <FadeIn direction="up">
+            <h2 className="text-3xl font-bold mb-6">Let's Create Your Next Project</h2>
+          </FadeIn>
+          <FadeIn direction="up" delay={0.2}>
+            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+              Ready to join our growing list of satisfied clients? Contact us today to discuss your project.
+            </p>
+          </FadeIn>
+          <FadeIn direction="up" delay={0.4}>
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link 
+                href="/contact" 
+                className="inline-block bg-white text-accent hover:bg-gray-100 px-8 py-4 rounded-lg transition-colors duration-300 font-medium"
+              >
+                Start Your Project
+              </Link>
+            </motion.div>
+          </FadeIn>
         </div>
       </section>
     </main>
