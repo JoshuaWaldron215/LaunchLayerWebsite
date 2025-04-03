@@ -126,12 +126,12 @@ const ProjectDetail = ({
             <FadeIn direction="up" delay={0.2}>
               <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
                 <img 
-                  src={image} 
-                  alt={`${title} - Main View`}
+                  src="/images/bucks-county-soccer.png" 
+                  alt={`${title} - Desktop View`}
                   className="w-full rounded-lg"
                 />
                 <p className="text-center mt-4 text-gray-600">
-                  Main view
+                  Desktop view
                 </p>
               </div>
             </FadeIn>
@@ -140,12 +140,12 @@ const ProjectDetail = ({
             <FadeIn direction="up" delay={0.4}>
               <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
                 <img 
-                  src={image} 
-                  alt={`${title} - Responsive View`}
+                  src="/images/bucks-county-soccer-mobile.png" 
+                  alt={`${title} - Responsive Mobile View`}
                   className="w-full rounded-lg"
                 />
                 <p className="text-center mt-4 text-gray-600">
-                  Responsive design
+                  Responsive mobile design
                 </p>
               </div>
             </FadeIn>
