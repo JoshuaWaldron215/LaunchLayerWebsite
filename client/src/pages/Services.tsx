@@ -10,8 +10,7 @@ import {
   StaggerItem, 
   ParallaxScroll, 
   TextReveal,
-  HoverCard,
-  GradientMeshBackground
+  HoverCard 
 } from "@/components/animations";
 
 const Services = () => {
@@ -52,15 +51,8 @@ const Services = () => {
         jsonLd={servicesJsonLd}
       />
       {/* Services Header */}
-      <section className="py-20 px-8 relative overflow-hidden">
-        <GradientMeshBackground 
-          className="absolute inset-0 z-0" 
-          colors={['#3182CE', '#4299E1', '#63B3ED', '#90CDF4']}
-          opacity={0.7}
-          blur={120}
-          speed={4}
-        />
-        <div className="max-w-7xl mx-auto text-center relative z-10">
+      <section className="py-20 px-8 bg-gradient-to-br from-secondary to-primary overflow-hidden">
+        <div className="max-w-7xl mx-auto text-center">
           <TextReveal 
             text="Our Services"
             tag="h1"
@@ -343,15 +335,8 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-8 relative text-white overflow-hidden">
-        <GradientMeshBackground 
-          className="absolute inset-0 z-0" 
-          colors={['#1E40AF', '#2563EB', '#3B82F6', '#60A5FA']}
-          opacity={0.9}
-          blur={100}
-          speed={3}
-        />
-        <div className="max-w-7xl mx-auto text-center relative z-10">
+      <section className="py-20 px-8 bg-accent text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto text-center">
           <FadeIn direction="up">
             <h2 className="text-3xl font-bold mb-6">Ready to Start Your Project?</h2>
           </FadeIn>
