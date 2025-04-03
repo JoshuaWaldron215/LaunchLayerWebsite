@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
-import Project3DViewer from '@/components/3D/ProjectViewer';
 import { Button } from '@/components/ui/button';
 import { FadeIn, TextReveal } from '@/components/animations';
 
@@ -46,7 +45,8 @@ const ProjectDetail = ({
 }: ProjectDetailProps) => {
   const [activeTab, setActiveTab] = useState('overview');
 
-  // Create project data for the 3D viewer
+  // Project data structure preserved for future 3D viewer re-implementation
+  // Currently disabled to fix Replit environment compatibility issues
   const project3DData = [
     {
       id,
@@ -119,21 +119,26 @@ const ProjectDetail = ({
         </div>
       </section>
 
-      {/* 3D Viewer Section */}
+      {/* Temporarily disable 3D Viewer to fix routing issue */}
       <section className="py-20 px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <FadeIn direction="up">
             <h2 className="text-3xl font-bold mb-12 text-center">
-              Interactive 3D Project Viewer
+              Project Screenshots
             </h2>
           </FadeIn>
           <FadeIn direction="up" delay={0.2}>
-            <Project3DViewer projects={project3DData} />
+            <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
+              <img 
+                src={image} 
+                alt={imageAlt}
+                className="w-full rounded-lg"
+              />
+            </div>
           </FadeIn>
           <FadeIn direction="up" delay={0.4}>
             <p className="text-center mt-8 text-gray-600 max-w-2xl mx-auto">
-              Use our interactive 3D viewer to explore this project. Drag to rotate the model, 
-              scroll to zoom in and out, and click to view project details.
+              View the website design and layout. The interactive 3D viewer is temporarily unavailable.
             </p>
           </FadeIn>
         </div>
