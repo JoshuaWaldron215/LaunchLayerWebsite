@@ -49,13 +49,13 @@ const ProjectDetail = ({
 
   return (
     <div className="bg-white">
-      {/* Back to Portfolio Link - Fixed at the top */}
-      <div className="bg-gradient-to-br from-secondary to-primary pt-8 pb-0 px-8">
+      {/* Back to Portfolio Link - Fixed at the top with better visibility */}
+      <div className="bg-gradient-to-br from-secondary to-primary pt-6 pb-4 px-8">
         <div className="max-w-7xl mx-auto">
-          <Link href="/portfolio" className="inline-flex items-center text-sm font-medium text-white/80 hover:text-white transition-colors cursor-pointer">
+          <Link href="/portfolio" className="inline-flex items-center text-base font-medium bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-md transition-colors cursor-pointer shadow-md">
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
-              className="h-4 w-4 mr-1" 
+              className="h-5 w-5 mr-2" 
               fill="none" 
               viewBox="0 0 24 24" 
               stroke="currentColor"
@@ -68,7 +68,7 @@ const ProjectDetail = ({
       </div>
 
       {/* Project Header */}
-      <section className="pt-8 pb-20 px-8 bg-gradient-to-br from-secondary to-primary overflow-hidden">
+      <section className="pt-6 pb-20 px-8 bg-gradient-to-br from-secondary to-primary overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
