@@ -49,12 +49,12 @@ function Router() {
 
 function App() {
   return (
-    <HelmetProvider>
-      <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <HelmetProvider context={{}}>
         <Router />
         <Toaster />
-      </QueryClientProvider>
-    </HelmetProvider>
+      </HelmetProvider>
+    </QueryClientProvider>
   );
 }
 

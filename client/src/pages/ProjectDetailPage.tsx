@@ -4,6 +4,7 @@ import { portfolioItems } from '@/lib/data';
 import ProjectDetail from '@/components/ProjectDetail';
 import SEO from '@/components/SEO';
 import NotFound from './not-found';
+import ErrorBoundary from '@/components/ErrorBoundary';
 
 // Expanded portfolio data with more details
 const expandedPortfolioData = portfolioItems.map(item => ({
@@ -73,20 +74,21 @@ const ProjectDetailPage = () => {
     }
   };
 
-  // Only use SEO component after client-side mount to prevent repl.it context errors
   return (
     <>
-      {mounted && (
-        <SEO 
-          title={`${project.title} - LaunchLayer Portfolio Case Study`}
-          description={`Explore how LaunchLayer helped ${project.title} with custom web development solutions. View our case study and results.`}
-          keywords={`${project.title}, web development case study, ${project.tags.join(", ")}, philadelphia web developer`}
-          ogTitle={`${project.title} - Web Development Case Study`}
-          ogDescription={project.description}
-          ogImage={project.image}
-          jsonLd={jsonLd}
-        />
-      )}
+      <ErrorBoundary>
+        {mounted && (
+          <SEO 
+            title={`${project.title} - LaunchLayer Portfolio Case Study`}
+            description={`Explore how LaunchLayer helped ${project.title} with custom web development solutions. View our case study and results.`}
+            keywords={`${project.title}, web development case study, ${project.tags.join(", ")}, philadelphia web developer`}
+            ogTitle={`${project.title} - Web Development Case Study`}
+            ogDescription={project.description}
+            ogImage={project.image}
+            jsonLd={jsonLd}
+          />
+        )}
+      </ErrorBoundary>
       <ProjectDetail {...project} />
     </>
   );
