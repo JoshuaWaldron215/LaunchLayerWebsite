@@ -63,22 +63,18 @@ const Portfolio = () => {
       {/* Project Stats */}
       <section className="py-20 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
+          <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-5xl font-bold text-accent mb-2">100+</div>
+              <div className="text-5xl font-bold text-accent mb-2">50+</div>
               <p className="text-gray-600">Projects Completed</p>
             </div>
             <div>
-              <div className="text-5xl font-bold text-accent mb-2">95%</div>
+              <div className="text-5xl font-bold text-accent mb-2">99%</div>
               <p className="text-gray-600">Client Satisfaction</p>
             </div>
             <div>
-              <div className="text-5xl font-bold text-accent mb-2">10+</div>
+              <div className="text-5xl font-bold text-accent mb-2">5+</div>
               <p className="text-gray-600">Years Experience</p>
-            </div>
-            <div>
-              <div className="text-5xl font-bold text-accent mb-2">15</div>
-              <p className="text-gray-600">Industry Awards</p>
             </div>
           </div>
         </div>
