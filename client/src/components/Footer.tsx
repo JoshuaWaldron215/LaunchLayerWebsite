@@ -55,7 +55,7 @@ const Footer = () => {
             <ul className="space-y-3 text-gray-400">
               <li className="flex items-start">
                 <i className="fas fa-map-marker-alt mt-1 mr-3"></i>
-                <span>123 Tech Avenue, Suite 400<br/>San Francisco, CA 94107</span>
+                <span>Philadelphia, PA</span>
               </li>
               <li className="flex items-center">
                 <i className="fas fa-envelope mr-3"></i>
@@ -63,7 +63,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <i className="fas fa-phone-alt mr-3"></i>
-                <span>(415) 555-1234</span>
+                <span>(215) 207-5885</span>
               </li>
             </ul>
           </div>

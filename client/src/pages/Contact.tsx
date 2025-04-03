@@ -30,7 +30,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-bold mb-1">Location</h4>
-                    <p className="text-gray-600">123 Tech Avenue, Suite 400<br/>San Francisco, CA 94107</p>
+                    <p className="text-gray-600">Philadelphia, PA</p>
                   </div>
                 </div>
                 
@@ -50,7 +50,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-bold mb-1">Phone</h4>
-                    <p className="text-gray-600">(415) 555-1234</p>
+                    <p className="text-gray-600">(215) 207-5885</p>
                   </div>
                 </div>
               </div>
@@ -81,12 +81,12 @@ const Contact = () => {
       {/* Map Section */}
       <section className="h-96 w-full">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0927562292425!2d-122.3971317!3d37.7911757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085806585cfc28f%3A0xad9c4e6b9a799b78!2sFerry%20Building!5e0!3m2!1sen!2sus!4v1689028536257!5m2!1sen!2sus" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195724.69211078184!2d-75.26273745!3d39.97765820000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6b7d8d4b54beb%3A0x89f514d88c3e58c1!2sPhiladelphia%2C%20PA%2C%20USA!5e0!3m2!1sen!2s!4v1701360356522!5m2!1sen!2s" 
           className="w-full h-full border-0" 
           loading="lazy" 
           referrerPolicy="no-referrer-when-downgrade"
-          title="LaunchLayer Office Location"
-          aria-label="Map showing LaunchLayer office location"
+          title="LaunchLayer Philadelphia Location"
+          aria-label="Map showing LaunchLayer Philadelphia location"
         ></iframe>
       </section>
     </main>

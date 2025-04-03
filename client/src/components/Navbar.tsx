@@ -23,10 +23,10 @@ const Navbar = () => {
   }, [location]);
 
   const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/services", label: "Services" },
-    { path: "/portfolio", label: "Portfolio" },
-    { path: "/contact", label: "Contact" },
+    { path: "/", label: "Home", exact: true },
+    { path: "/services", label: "Services", exact: false },
+    { path: "/portfolio", label: "Portfolio", exact: false },
+    { path: "/contact", label: "Contact", exact: false },
   ];
 
   return (
@@ -51,7 +51,7 @@ const Navbar = () => {
               href={link.path}
               className={cn(
                 "nav-link font-medium",
-                location === link.path ? "active" : ""
+                (link.exact ? location === link.path : location.startsWith(link.path)) ? "active" : ""
               )}
             >
               {link.label}
@@ -87,7 +87,7 @@ const Navbar = () => {
                 href={link.path}
                 className={cn(
                   "nav-link font-medium py-2",
-                  location === link.path ? "active" : ""
+                  (link.exact ? location === link.path : location.startsWith(link.path)) ? "active" : ""
                 )}
               >
                 {link.label}
