@@ -1,10 +1,8 @@
 import { useParams } from 'wouter';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { portfolioItems } from '@/lib/data';
 import ProjectDetail from '@/components/ProjectDetail';
-import SEO from '@/components/SEO';
 import NotFound from './not-found';
-import ErrorBoundary from '@/components/ErrorBoundary';
 
 // Expanded portfolio data with more details
 const expandedPortfolioData = portfolioItems.map(item => ({
@@ -39,59 +37,27 @@ const expandedPortfolioData = portfolioItems.map(item => ({
 
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
-  const [mounted, setMounted] = useState(false);
   const project = expandedPortfolioData.find(item => item.id === id);
   
   useEffect(() => {
     // Scroll to top on page load
     window.scrollTo(0, 0);
-    
-    // Mark component as mounted to safely use Helmet
-    setMounted(true);
   }, [id]);
   
   if (!project) {
     return <NotFound />;
   }
   
-  // Create JSON-LD structured data
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": `${project.title} - LaunchLayer Portfolio Case Study`,
-    "description": project.description,
-    "image": project.image,
-    "mainEntity": {
-      "@type": "CreativeWork",
-      "name": project.title,
-      "description": project.description,
-      "creator": {
-        "@type": "Organization",
-        "name": "LaunchLayer",
-        "url": "https://launchlayer.com"
-      },
-      "keywords": project.tags.join(", ")
-    }
-  };
+  // Simple title update without using Helmet
+  useEffect(() => {
+    document.title = `${project.title} - LaunchLayer Portfolio Case Study`;
+    // Clean up on unmount
+    return () => {
+      document.title = 'LaunchLayer - Professional Web Development Services';
+    };
+  }, [project.title]);
 
-  return (
-    <>
-      <ErrorBoundary>
-        {mounted && (
-          <SEO 
-            title={`${project.title} - LaunchLayer Portfolio Case Study`}
-            description={`Explore how LaunchLayer helped ${project.title} with custom web development solutions. View our case study and results.`}
-            keywords={`${project.title}, web development case study, ${project.tags.join(", ")}, philadelphia web developer`}
-            ogTitle={`${project.title} - Web Development Case Study`}
-            ogDescription={project.description}
-            ogImage={project.image}
-            jsonLd={jsonLd}
-          />
-        )}
-      </ErrorBoundary>
-      <ProjectDetail {...project} />
-    </>
-  );
+  return <ProjectDetail {...project} />;
 };
 
 export default ProjectDetailPage;
