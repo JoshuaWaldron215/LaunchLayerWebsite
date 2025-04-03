@@ -1,8 +1,8 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import { portfolioItems } from "@/lib/data";
 import PortfolioItem from "@/components/PortfolioItem";
-import SEO from "@/components/SEO";
 import { 
   FadeIn, 
   ScaleIn, 
@@ -40,16 +40,16 @@ const Portfolio = () => {
     }
   };
 
+  // Set document title directly
+  useEffect(() => {
+    document.title = "Web Development Portfolio | LaunchLayer Philadelphia";
+    return () => {
+      document.title = "LaunchLayer - Professional Web Development Services";
+    };
+  }, []);
+
   return (
     <main className="pt-24">
-      <SEO 
-        title="Web Development Portfolio | LaunchLayer Philadelphia"
-        description="View our portfolio of 50+ successful web development projects completed over 5+ years with a 99% client satisfaction rate. Custom websites built in Philadelphia, PA."
-        keywords="web design portfolio, website examples, web developer projects, Philadelphia web design samples, responsive website gallery, business website portfolio"
-        ogTitle="LaunchLayer Portfolio: 50+ Successful Web Projects"
-        ogDescription="See real examples of our web development work across various industries. Responsive designs, e-commerce solutions, and business websites showcasing our expertise."
-        jsonLd={portfolioJsonLd}
-      />
       {/* Portfolio Header */}
       <section className="py-20 px-8 bg-gradient-to-br from-secondary to-primary overflow-hidden">
         <div className="max-w-7xl mx-auto text-center">

@@ -69,19 +69,17 @@ const ProjectDetail = ({
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <Link href="/portfolio">
-                <a className="inline-flex items-center text-sm font-medium text-white/80 hover:text-white mb-6 transition-colors">
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    className="h-4 w-4 mr-1" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                  Back to Portfolio
-                </a>
+              <Link href="/portfolio" className="inline-flex items-center text-sm font-medium text-white/80 hover:text-white mb-6 transition-colors cursor-pointer">
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className="h-4 w-4 mr-1" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to Portfolio
               </Link>
               <TextReveal 
                 text={title}
@@ -251,19 +249,17 @@ const ProjectDetail = ({
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <Link href={`/portfolio/${project.id}`}>
-                    <a className="block group">
-                      <div className="relative overflow-hidden rounded-lg shadow-md">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                          <h3 className="text-white font-bold">{project.title}</h3>
-                        </div>
+                  <Link href={`/portfolio/${project.id}`} className="block group cursor-pointer">
+                    <div className="relative overflow-hidden rounded-lg shadow-md">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <h3 className="text-white font-bold">{project.title}</h3>
                       </div>
-                    </a>
+                    </div>
                   </Link>
                 </motion.div>
               ))}
@@ -280,12 +276,10 @@ const ProjectDetail = ({
             <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
               Let's discuss how we can help bring your vision to life with our expertise in web development and design.
             </p>
-            <Link href="/contact">
-              <a>
-                <Button className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6">
-                  Get in Touch
-                </Button>
-              </a>
+            <Link href="/contact" className="inline-block">
+              <Button className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6">
+                Get in Touch
+              </Button>
             </Link>
           </FadeIn>
         </div>
