@@ -22,7 +22,7 @@ const PortfolioItem: FC<PortfolioItemProps> = ({
   return (
     <div className="portfolio-item rounded-lg overflow-hidden shadow-md group">
       <Link href={id ? `/portfolio/${id}` : "#"}>
-        <a className="block">
+        <div className="block cursor-pointer">
           <div className="h-60 overflow-hidden relative">
             <img 
               src={image} 
@@ -51,7 +51,7 @@ const PortfolioItem: FC<PortfolioItemProps> = ({
               ))}
             </div>
           </div>
-        </a>
+        </div>
       </Link>
     </div>
   );
