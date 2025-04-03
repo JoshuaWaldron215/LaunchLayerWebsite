@@ -1,8 +1,60 @@
 import { Link } from "wouter";
+import SEO from "@/components/SEO";
 
 const About = () => {
+  // JSON-LD for About Page
+  const aboutJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "LaunchLayer",
+      "description": "We're Aqeel and Josh — two creative developers who teamed up to help small businesses and creators bring their websites to life. At LaunchLayer, we blend design and code to launch clean, modern, mobile-friendly websites that work and wow.",
+      "url": "https://launchlayer.com",
+      "foundingDate": "2018",
+      "foundingLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Philadelphia",
+          "addressRegion": "PA"
+        }
+      },
+      "founders": [
+        {
+          "@type": "Person",
+          "name": "Josh Waldron",
+          "jobTitle": "Co-Founder & Lead Developer",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Philadelphia",
+            "addressRegion": "PA"
+          }
+        },
+        {
+          "@type": "Person",
+          "name": "Aqeel Bacchus",
+          "jobTitle": "Co-Founder & Lead Developer",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Scranton",
+            "addressRegion": "PA"
+          }
+        }
+      ]
+    }
+  };
+
   return (
     <main className="pt-24">
+      <SEO 
+        title="About LaunchLayer | Philadelphia Web Development Team"
+        description="Meet Josh and Aqeel, the team behind LaunchLayer - a web development agency in Philadelphia with 5+ years of experience creating custom websites for small businesses."
+        keywords="web developer Philadelphia, about LaunchLayer, web design team, Josh Waldron, Aqeel Bacchus, web development company, responsive website designer"
+        ogTitle="About the LaunchLayer Team | Philadelphia Web Developers"
+        ogDescription="Meet the developers behind LaunchLayer - a Philadelphia-based web development team specializing in custom websites for small businesses and entrepreneurs."
+        jsonLd={aboutJsonLd}
+      />
       {/* About Header */}
       <section className="py-20 px-8 bg-gradient-to-br from-secondary to-primary">
         <div className="max-w-7xl mx-auto text-center">

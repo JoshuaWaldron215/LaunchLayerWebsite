@@ -1,10 +1,45 @@
 import { Link } from "wouter";
 import { services, features } from "@/lib/data";
 import ServiceCard from "@/components/ServiceCard";
+import SEO from "@/components/SEO";
 
 const Services = () => {
+  // JSON-LD for Services Page
+  const servicesJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": services.map((service, index) => ({
+      "@type": "Service",
+      "position": index + 1,
+      "name": service.title,
+      "description": service.description,
+      "offers": {
+        "@type": "Offer",
+        "price": service.price.replace(/[^0-9\-\+]/g, ''),
+        "priceCurrency": "USD"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "LaunchLayer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Philadelphia",
+          "addressRegion": "PA"
+        }
+      }
+    }))
+  };
+
   return (
     <main className="pt-24">
+      <SEO 
+        title="Web Development Services | LaunchLayer Philadelphia"
+        description="Affordable web development packages from $150-$1050. Custom websites, e-commerce solutions, and monthly maintenance options for Philadelphia businesses."
+        keywords="web development services, website packages, affordable web design, Philadelphia web developer, business website cost, e-commerce website, monthly website maintenance"
+        ogTitle="Professional Web Development Services & Packages | LaunchLayer"
+        ogDescription="Choose from our Starter ($150-$250), Standard ($300-$500), or Premium ($700-$1050+) packages. Custom web solutions for Philadelphia businesses of all sizes."
+        jsonLd={servicesJsonLd}
+      />
       {/* Services Header */}
       <section className="py-20 px-8 bg-gradient-to-br from-secondary to-primary">
         <div className="max-w-7xl mx-auto text-center">

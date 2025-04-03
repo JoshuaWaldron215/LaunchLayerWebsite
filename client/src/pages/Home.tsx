@@ -1,10 +1,39 @@
 import { Link } from "wouter";
 import { features, testimonials } from "@/lib/data";
 import TestimonialCard from "@/components/TestimonialCard";
+import SEO from "@/components/SEO";
 
 const Home = () => {
+  // JSON-LD structured data for HomePage
+  const homeJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "LaunchLayer",
+    "url": "https://launchlayer.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://launchlayer.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "description": "Professional web development and design services for modern businesses. We help you launch your online presence with custom, responsive websites and applications.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "LaunchLayer",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://launchlayer.com/logo.png"
+      }
+    }
+  };
+
   return (
     <main>
+      <SEO 
+        title="LaunchLayer - Professional Web Development Services in Philadelphia"
+        description="LaunchLayer provides expert web development solutions for businesses in Philadelphia. Launch your digital presence with our custom websites and applications."
+        keywords="web development Philadelphia, custom websites, business websites, responsive design, web applications, Philadelphia web design"
+        jsonLd={homeJsonLd}
+      />
       {/* Hero Section */}
       <section id="hero" className="pt-32 pb-20 md:pt-40 md:pb-32 px-8 bg-gradient-to-br from-secondary to-primary">
         <div className="max-w-7xl mx-auto">

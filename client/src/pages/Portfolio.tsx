@@ -1,10 +1,44 @@
 import { Link } from "wouter";
 import { portfolioItems } from "@/lib/data";
 import PortfolioItem from "@/components/PortfolioItem";
+import SEO from "@/components/SEO";
 
 const Portfolio = () => {
+  // JSON-LD for Portfolio Page
+  const portfolioJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "headline": "LaunchLayer Web Development Portfolio - 50+ Successful Projects",
+    "description": "Browse our portfolio of 50+ web development projects with a 99% client satisfaction rate. See examples of our custom websites, e-commerce solutions, and more.",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": portfolioItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "CreativeWork",
+          "name": item.title,
+          "description": item.description,
+          "image": item.image,
+          "creator": {
+            "@type": "Organization",
+            "name": "LaunchLayer"
+          }
+        }
+      }))
+    }
+  };
+
   return (
     <main className="pt-24">
+      <SEO 
+        title="Web Development Portfolio | LaunchLayer Philadelphia"
+        description="View our portfolio of 50+ successful web development projects completed over 5+ years with a 99% client satisfaction rate. Custom websites built in Philadelphia, PA."
+        keywords="web design portfolio, website examples, web developer projects, Philadelphia web design samples, responsive website gallery, business website portfolio"
+        ogTitle="LaunchLayer Portfolio: 50+ Successful Web Projects"
+        ogDescription="See real examples of our web development work across various industries. Responsive designs, e-commerce solutions, and business websites showcasing our expertise."
+        jsonLd={portfolioJsonLd}
+      />
       {/* Portfolio Header */}
       <section className="py-20 px-8 bg-gradient-to-br from-secondary to-primary">
         <div className="max-w-7xl mx-auto text-center">

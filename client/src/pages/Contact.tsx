@@ -1,8 +1,41 @@
 import ContactForm from "@/components/ContactForm";
+import SEO from "@/components/SEO";
 
 const Contact = () => {
+  // JSON-LD for Contact Page
+  const contactJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "LaunchLayer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Philadelphia",
+        "addressRegion": "PA",
+        "addressCountry": "US"
+      },
+      "telephone": "(215) 207-5885",
+      "email": "hello@launchlayer.com",
+      "url": "https://launchlayer.com",
+      "sameAs": [
+        "https://twitter.com/launchlayer",
+        "https://linkedin.com/company/launchlayer",
+        "https://instagram.com/launchlayer"
+      ]
+    }
+  };
+
   return (
     <main className="pt-24">
+      <SEO 
+        title="Contact LaunchLayer | Philadelphia Web Development Services"
+        description="Get in touch with LaunchLayer's web development team in Philadelphia. Request a quote for your custom website project or call us at (215) 207-5885."
+        keywords="contact web developer, Philadelphia web design contact, website quote, custom website pricing, LaunchLayer contact, web development consultation"
+        ogTitle="Contact LaunchLayer | Get a Free Web Development Quote"
+        ogDescription="Ready to launch your website? Contact our Philadelphia-based web development team for a free quote. Call (215) 207-5885 or fill out our contact form."
+        jsonLd={contactJsonLd}
+      />
       {/* Contact Header */}
       <section className="py-20 px-8 bg-gradient-to-br from-secondary to-primary">
         <div className="max-w-7xl mx-auto text-center">
