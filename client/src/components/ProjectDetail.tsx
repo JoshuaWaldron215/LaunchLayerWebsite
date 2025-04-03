@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { FadeIn, TextReveal } from '@/components/animations';
+import ErrorBoundary from '@/components/ErrorBoundary';
+
+// Lazy load the 3D viewer component to prevent initial loading issues
+const Project3DViewer = lazy(() => import('@/components/3D/ProjectViewer'));
 
 interface ProjectDetailProps {
   id: string;
@@ -119,26 +123,52 @@ const ProjectDetail = ({
         </div>
       </section>
 
-      {/* Temporarily disable 3D Viewer to fix routing issue */}
+      {/* 3D Viewer Section */}
       <section className="py-20 px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <FadeIn direction="up">
             <h2 className="text-3xl font-bold mb-12 text-center">
-              Project Screenshots
+              Interactive 3D Project Viewer
             </h2>
           </FadeIn>
           <FadeIn direction="up" delay={0.2}>
-            <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
-              <img 
-                src={image} 
-                alt={imageAlt}
-                className="w-full rounded-lg"
-              />
+            {/* Wrap the 3D viewer in error boundaries and suspense to handle loading and errors gracefully */}
+            <div className="relative">
+              <Suspense fallback={
+                <div className="w-full h-[600px] flex items-center justify-center bg-gray-100 rounded-lg border border-gray-200">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+                    <p className="text-gray-600">Loading 3D Experience...</p>
+                  </div>
+                </div>
+              }>
+                {/* Use custom fallback content if the 3D viewer fails to load */}
+                <div className="w-full">
+                  <ErrorBoundary 
+                    fallback={
+                      <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
+                        <img 
+                          src={image} 
+                          alt={imageAlt}
+                          className="w-full rounded-lg"
+                        />
+                        <p className="text-center mt-4 text-gray-600">
+                          We're experiencing technical difficulties with the 3D viewer. 
+                          Please enjoy this project screenshot instead.
+                        </p>
+                      </div>
+                    }
+                  >
+                    <Project3DViewer projects={project3DData} />
+                  </ErrorBoundary>
+                </div>
+              </Suspense>
             </div>
           </FadeIn>
           <FadeIn direction="up" delay={0.4}>
             <p className="text-center mt-8 text-gray-600 max-w-2xl mx-auto">
-              View the website design and layout. The interactive 3D viewer is temporarily unavailable.
+              Use our interactive 3D viewer to explore this project. Drag to rotate the model, 
+              scroll to zoom in and out, and click to view project details.
             </p>
           </FadeIn>
         </div>

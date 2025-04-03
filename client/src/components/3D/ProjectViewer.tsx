@@ -95,9 +95,22 @@ const ProjectScene = ({ projects, selectedProject, setSelectedProject }: Project
     return texture;
   }, []);
   
-  // Try to load all project textures
+  // Enhanced error handling for texture loading
+  // Create a safer version of texture input that prevents errors
   const textureInput = Object.fromEntries(
-    projects.map(project => [project.id, project.image])
+    projects.map(project => {
+      try {
+        // Validate the image URL is accessible
+        if (!project.image || typeof project.image !== 'string') {
+          console.warn(`Invalid image URL for project ${project.id}`);
+          return [project.id, ''];
+        }
+        return [project.id, project.image];
+      } catch (err) {
+        console.warn(`Error processing project ${project.id}:`, err);
+        return [project.id, ''];
+      }
+    })
   );
   
   // Type assertion to help TypeScript understand the structure
@@ -185,6 +198,7 @@ interface Project3DViewerProps {
 
 const Project3DViewer = ({ projects }: Project3DViewerProps) => {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
   
   useEffect(() => {
     // Set first project as selected by default
@@ -193,9 +207,42 @@ const Project3DViewer = ({ projects }: Project3DViewerProps) => {
     }
   }, [projects, selectedProject]);
 
+  // Extra validation to prevent ThreeJS errors
+  if (!projects || projects.length === 0) {
+    return (
+      <div className="w-full h-[600px] flex items-center justify-center bg-gray-100 rounded-lg">
+        <p className="text-gray-600">No projects available for 3D view</p>
+      </div>
+    );
+  }
+
+  const handleCanvasError = (e: Error) => {
+    console.error("Canvas error:", e);
+    setError("Failed to initialize 3D environment");
+  };
+
+  if (error) {
+    return (
+      <div className="w-full h-[600px] flex items-center justify-center bg-gray-100 rounded-lg border border-red-200">
+        <div className="text-center p-6">
+          <p className="text-red-500 mb-4">🚨 {error}</p>
+          <p className="text-gray-600">We're having trouble loading the 3D experience. Please try again later.</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative w-full h-[600px] rounded-lg overflow-hidden shadow-2xl">
-      <Canvas shadows camera={{ position: [0, 0, 10], fov: 50 }}>
+      <Canvas 
+        shadows 
+        camera={{ position: [0, 0, 10], fov: 50 }}
+        onCreated={({ gl }) => {
+          // Configure renderer for better performance
+          gl.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        }}
+        onError={handleCanvasError}
+      >
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1} castShadow />
         <Suspense fallback={
@@ -225,16 +272,17 @@ const Project3DViewer = ({ projects }: Project3DViewerProps) => {
             enablePan={false}
             minPolarAngle={Math.PI / 3}
             maxPolarAngle={Math.PI / 1.5}
+            maxDistance={15}
           />
         </Suspense>
       </Canvas>
       
       {/* Controls and info outside of canvas */}
-      <div className="absolute bottom-5 left-0 right-0 flex justify-center space-x-3 px-4">
+      <div className="absolute bottom-5 left-0 right-0 flex justify-center space-x-3 px-4 flex-wrap">
         {projects.map((project) => (
           <motion.button
             key={project.id}
-            className={`px-3 py-1 rounded-full text-sm transition-colors ${
+            className={`px-3 py-1 rounded-full text-sm transition-colors mb-2 ${
               selectedProject === project.id 
                 ? 'bg-primary text-white' 
                 : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
