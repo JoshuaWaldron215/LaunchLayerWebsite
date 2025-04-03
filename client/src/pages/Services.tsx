@@ -64,6 +64,39 @@ const Services = () => {
               />
             ))}
           </div>
+          
+          {/* Add-On Pricing Section */}
+          <div className="mt-20 bg-white rounded-lg shadow-md p-8">
+            <div className="text-center mb-8">
+              <div className="inline-block text-accent text-3xl mb-4">
+                <i className="fas fa-puzzle-piece"></i>
+              </div>
+              <h3 className="text-2xl font-bold mb-2">Add-On Services</h3>
+              <p className="text-gray-600">
+                Enhance your website with these additional services
+              </p>
+            </div>
+            
+            <div className="max-w-2xl mx-auto">
+              <div className="flex flex-col space-y-4">
+                <div className="flex justify-between items-center p-4 border-b border-gray-200">
+                  <div>
+                    <h4 className="font-medium">Monthly Maintenance</h4>
+                    <p className="text-gray-500 text-sm">Regular updates, security patches, and content changes</p>
+                  </div>
+                  <div className="text-accent font-semibold">$50 – $75/month</div>
+                </div>
+                
+                <div className="flex justify-between items-center p-4 border-b border-gray-200">
+                  <div>
+                    <h4 className="font-medium">Hosting Setup</h4>
+                    <p className="text-gray-500 text-sm">Domain configuration, server setup, and deployment</p>
+                  </div>
+                  <div className="text-accent font-semibold">$50 – $75 (one-time)</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
