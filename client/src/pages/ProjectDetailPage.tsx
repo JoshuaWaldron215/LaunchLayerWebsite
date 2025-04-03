@@ -1,5 +1,5 @@
 import { useParams } from 'wouter';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { portfolioItems } from '@/lib/data';
 import ProjectDetail from '@/components/ProjectDetail';
 import SEO from '@/components/SEO';
@@ -38,11 +38,15 @@ const expandedPortfolioData = portfolioItems.map(item => ({
 
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
+  const [mounted, setMounted] = useState(false);
   const project = expandedPortfolioData.find(item => item.id === id);
   
   useEffect(() => {
     // Scroll to top on page load
     window.scrollTo(0, 0);
+    
+    // Mark component as mounted to safely use Helmet
+    setMounted(true);
   }, [id]);
   
   if (!project) {
@@ -69,17 +73,20 @@ const ProjectDetailPage = () => {
     }
   };
 
+  // Only use SEO component after client-side mount to prevent repl.it context errors
   return (
     <>
-      <SEO 
-        title={`${project.title} - LaunchLayer Portfolio Case Study`}
-        description={`Explore how LaunchLayer helped ${project.title} with custom web development solutions. View our case study and results.`}
-        keywords={`${project.title}, web development case study, ${project.tags.join(", ")}, philadelphia web developer`}
-        ogTitle={`${project.title} - Web Development Case Study`}
-        ogDescription={project.description}
-        ogImage={project.image}
-        jsonLd={jsonLd}
-      />
+      {mounted && (
+        <SEO 
+          title={`${project.title} - LaunchLayer Portfolio Case Study`}
+          description={`Explore how LaunchLayer helped ${project.title} with custom web development solutions. View our case study and results.`}
+          keywords={`${project.title}, web development case study, ${project.tags.join(", ")}, philadelphia web developer`}
+          ogTitle={`${project.title} - Web Development Case Study`}
+          ogDescription={project.description}
+          ogImage={project.image}
+          jsonLd={jsonLd}
+        />
+      )}
       <ProjectDetail {...project} />
     </>
   );
