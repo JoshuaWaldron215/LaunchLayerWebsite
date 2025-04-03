@@ -92,9 +92,11 @@ const ProjectDetail = ({
                     </span>
                   ))}
                 </div>
-                <Button className="bg-white text-primary hover:bg-white/90">
-                  View Live Website
-                </Button>
+                <a href="https://buckscountysoccertournament.com/" target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-white text-primary hover:bg-white/90">
+                    View Live Website
+                  </Button>
+                </a>
               </FadeIn>
             </div>
             <FadeIn direction="left">
