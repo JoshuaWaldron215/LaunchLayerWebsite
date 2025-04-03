@@ -78,7 +78,7 @@
   }
   
   .nav-link.active {
-    @apply text-accent;
+    @apply text-accent font-semibold;
   }
   
   .service-card {

@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <header className={cn(
-      "fixed top-0 left-0 right-0 bg-primary z-50 transition-shadow duration-300",
+      "fixed top-0 left-0 right-0 bg-white z-50 transition-shadow duration-300",
       scrolled ? "shadow-md" : ""
     )}>
       <nav className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
@@ -40,7 +40,7 @@ const Navbar = () => {
           <div className="text-accent text-3xl">
             <i className="fas fa-layer-group"></i>
           </div>
-          <span className="text-xl font-bold text-text">LaunchLayer</span>
+          <span className="text-xl font-bold text-gray-800">LaunchLayer</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -50,7 +50,7 @@ const Navbar = () => {
               key={link.path} 
               href={link.path}
               className={cn(
-                "nav-link font-medium",
+                "nav-link font-medium text-gray-700 hover:text-accent",
                 (link.exact ? location === link.path : location.startsWith(link.path)) ? "active" : ""
               )}
             >
@@ -69,7 +69,7 @@ const Navbar = () => {
         <div className="md:hidden">
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-text focus:outline-none"
+            className="text-gray-800 focus:outline-none"
             aria-label={mobileMenuOpen ? "Close Menu" : "Open Menu"}
           >
             <i className={`fas ${mobileMenuOpen ? "fa-times" : "fa-bars"} text-2xl`}></i>
@@ -79,14 +79,14 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-primary w-full border-t border-gray-200">
+        <div className="md:hidden bg-white w-full border-t border-gray-200">
           <div className="flex flex-col px-8 py-4 space-y-4">
             {navLinks.map((link) => (
               <Link 
                 key={link.path} 
                 href={link.path}
                 className={cn(
-                  "nav-link font-medium py-2",
+                  "nav-link font-medium py-2 text-gray-700 hover:text-accent",
                   (link.exact ? location === link.path : location.startsWith(link.path)) ? "active" : ""
                 )}
               >
