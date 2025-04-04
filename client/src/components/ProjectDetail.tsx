@@ -140,7 +140,7 @@ const ProjectDetail = ({
             {/* Primary Screenshot */}
             <FadeIn direction="up" delay={0.2}>
               <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
-                {image.startsWith('http') && (image.includes('shineworks') || image.includes('buckscountysoccer')) ? (
+                {image.startsWith('http') && image.includes('shineworks') ? (
                   <div className="aspect-video">
                     <iframe 
                       src={image} 
@@ -148,6 +148,22 @@ const ProjectDetail = ({
                       className="w-full h-full border-0 rounded-lg" 
                       loading="lazy"
                     />
+                  </div>
+                ) : id === "bucks-county-soccer-tournament" ? (
+                  <div className="aspect-video">
+                    <img 
+                      src="/images/bucks-county-soccer.png" 
+                      alt={`${title} - Desktop View`}
+                      className="w-full rounded-lg"
+                    />
+                    <a 
+                      href="https://buckscountysoccertournament.com/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="mt-2 text-sm text-primary block text-center"
+                    >
+                      Visit Live Site ↗
+                    </a>
                   </div>
                 ) : (
                   <img 
@@ -165,13 +181,21 @@ const ProjectDetail = ({
             {/* Secondary Screenshot - Mobile View */}
             <FadeIn direction="up" delay={0.4}>
               <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
-                {image.startsWith('http') && (image.includes('shineworks') || image.includes('buckscountysoccer')) ? (
+                {image.startsWith('http') && image.includes('shineworks') ? (
                   <div className="aspect-[9/16] max-w-[300px] mx-auto">
                     <iframe 
                       src={image} 
                       title={`${title} - Mobile View`}
                       className="w-full h-full border-0 rounded-lg" 
                       loading="lazy"
+                    />
+                  </div>
+                ) : id === "bucks-county-soccer-tournament" ? (
+                  <div className="aspect-[9/16] max-w-[300px] mx-auto">
+                    <img 
+                      src="/images/bucks-county-soccer-mobile.png" 
+                      alt={`${title} - Mobile View`}
+                      className="w-full rounded-lg"
                     />
                   </div>
                 ) : (
@@ -311,13 +335,24 @@ const ProjectDetail = ({
                   <Link href={`/portfolio/${project.id}`} className="block group cursor-pointer h-full">
                     <div className="relative overflow-hidden rounded-lg shadow-md h-full bg-white border border-gray-100">
                       <div className="aspect-video overflow-hidden">
-                        {project.image.startsWith('http') && (project.image.includes('shineworks') || project.image.includes('buckscountysoccer')) ? (
+                        {project.image.startsWith('http') && project.image.includes('shineworks') ? (
                           <iframe 
                             src={project.image} 
                             title={project.title}
                             className="w-full h-full border-0" 
                             loading="lazy"
                           />
+                        ) : project.id === "bucks-county-soccer-tournament" ? (
+                          <>
+                            <img
+                              src="/images/bucks-county-soccer.png"
+                              alt={project.title}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                              <span className="text-white text-sm bg-primary px-3 py-1 rounded-full">View Project</span>
+                            </div>
+                          </>
                         ) : (
                           <img
                             src={project.image}
