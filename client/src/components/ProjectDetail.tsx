@@ -158,21 +158,56 @@ const ProjectDetail = ({
             <FadeIn direction="up">
               <div className="mb-12">
                 <h3 className="text-2xl font-bold mb-8 text-center">Before the Redesign</h3>
-                <div className="grid md:grid-cols-3 gap-6">
+                
+                {/* Scrollable container for mobile */}
+                <div className="md:hidden relative overflow-x-auto pb-4">
+                  <div className="flex space-x-4 px-2 w-[800px]">
+                    {[
+                      '/images/destination-imagination/before1.png',
+                      '/images/destination-imagination/before2.png',
+                      '/images/destination-imagination/before3.png'
+                    ].map((img, idx) => (
+                      <div 
+                        key={idx} 
+                        className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg flex-1"
+                      >
+                        <div className="h-[240px] overflow-hidden">
+                          <img 
+                            src={img} 
+                            alt={`Original Design Screenshot ${idx+1}`}
+                            className="w-full h-full object-contain rounded-lg"
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="text-center text-sm text-gray-400 mt-2 italic px-2">
+                    ← Swipe to see more screenshots →
+                  </div>
+                </div>
+                
+                {/* Desktop grid */}
+                <div className="hidden md:grid md:grid-cols-3 gap-6">
                   {[
                     '/images/destination-imagination/before1.png',
                     '/images/destination-imagination/before2.png',
                     '/images/destination-imagination/before3.png'
                   ].map((img, idx) => (
-                    <div key={idx} className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
-                      <img 
-                        src={img} 
-                        alt={`Original Design Screenshot ${idx+1}`}
-                        className="w-full rounded-lg"
-                      />
+                    <div 
+                      key={idx} 
+                      className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg"
+                    >
+                      <div className="h-[240px] overflow-hidden">
+                        <img 
+                          src={img} 
+                          alt={`Original Design Screenshot ${idx+1}`}
+                          className="w-full h-full object-contain rounded-lg"
+                        />
+                      </div>
                     </div>
                   ))}
                 </div>
+                
                 <p className="text-center mt-8 text-gray-600 max-w-2xl mx-auto">
                   These screenshots show the original interface before our redesign - cluttered, complex, and difficult to navigate.
                   The live site embedded at the top of this page demonstrates our modern, user-friendly solution.

@@ -147,7 +147,7 @@ export const portfolioItems = [
   {
     id: "destination-imagination-dms",
     title: "Destination Imagination DMS Redesign",
-    description: "This redesign focused on improving the mobile experience, layout clarity, and performance of the Destination Imagination DMS system. The original design was cluttered and difficult to navigate on mobile. I created a simplified, more efficient interface that is responsive and easier to use.",
+    description: "This redesign focused on improving the mobile experience, layout clarity, and performance of the Destination Imagination DMS system. The original design was cluttered and difficult to navigate on mobile devices.",
     image: "/images/destination-imagination/thumbnail.png",
     imageAlt: "Destination Imagination logo",
     tags: ["UI/UX", "Redesign", "Responsive Design", "Education"],
