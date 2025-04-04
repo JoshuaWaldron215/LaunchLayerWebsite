@@ -148,7 +148,7 @@ export const portfolioItems = [
     id: "destination-imagination-dms",
     title: "Destination Imagination DMS Redesign",
     description: "This redesign focused on improving the mobile experience, layout clarity, and performance of the Destination Imagination DMS system. The original design was cluttered and difficult to navigate on mobile devices.",
-    image: "/images/destination-imagination/thumbnail.png",
+    image: "/images/destination-imagination/DI-Logo-Blog.jpg",
     imageAlt: "Destination Imagination logo",
     tags: ["UI/UX", "Redesign", "Responsive Design", "Education"],
     challenge: "The original Destination Imagination DMS system had an outdated, cluttered interface that was particularly difficult to use on mobile devices. Event participants and administrators struggled with the complex navigation, resulting in decreased engagement and increased support requests.",
@@ -171,9 +171,9 @@ export const portfolioItems = [
       "Responsive Design"
     ],
     testimonial: {
-      quote: "The LaunchLayer team transformed our complex management system into an elegant, intuitive interface that our users love. The redesign has dramatically improved our workflow efficiency and user satisfaction across the organization.",
-      author: "Sarah Johnson",
-      position: "Program Director, Destination Imagination"
+      quote: "This redesign much better and more seamless. I appreciate the thoughtfulness of the design, the card aspect for the team members is great, this is MUCH easier to read and use, and there are no visible CSS or layout errors anymore. The search is great, and the filter on the side for members, participants, spectators is great. The filter aspect and the other elements look great.",
+      author: "Donald Aufiero",
+      position: "Director of Software Engineering, Destination Imagination"
     },
     url: "https://destination-imagination-redesign.vercel.app/",
     relatedProjects: [
@@ -219,9 +219,9 @@ export const portfolioItems = [
 export const testimonials = [
   {
     quote: "The website that LaunchLayer developed for our tournament has transformed how we organize this annual event. The registration process is seamless, and the real-time score updates have been a huge hit with players and spectators alike.",
-    author: "Michael Torres",
+    author: "Ed Guerrero",
     position: "Tournament Director, Bucks County Soccer",
-    image: "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80",
+    image: "",
   },
   {
     quote: "LaunchLayer perfectly captured our vision for a premium car detailing website. The online booking feature has dramatically improved our business operations, and customers love how easy it is to schedule services.",
@@ -230,9 +230,9 @@ export const testimonials = [
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80",
   },
   {
-    quote: "The LaunchLayer team transformed our complex management system into an elegant, intuitive interface that our users love. The redesign has dramatically improved our workflow efficiency and user satisfaction across the organization.",
-    author: "Sarah Johnson",
-    position: "Program Director, Destination Imagination",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80",
+    quote: "This redesign much better and more seamless. I appreciate the thoughtfulness of the design, the card aspect for the team members is great, this is MUCH easier to read and use, and there are no visible CSS or layout errors anymore. The search is great, and the filter on the side for members, participants, spectators is great. The filter aspect and the other elements look great.",
+    author: "Donald Aufiero",
+    position: "Director of Software Engineering, Destination Imagination",
+    image: "/images/donald-aufiero.jpg",
   },
 ];
