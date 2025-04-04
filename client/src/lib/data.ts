@@ -72,7 +72,7 @@ export const portfolioItems = [
     id: "shineworks-detailing",
     title: "ShineWorks Detailing",
     description: "Premium mobile car detailing service website with responsive design and online booking system.",
-    image: "https://shineworksdetailing.replit.app/",
+    image: "/images/shineworks-detailing/thumbnail.jpg",
     imageAlt: "ShineWorks Detailing website screenshot",
     tags: ["Automotive", "React", "TypeScript", "Tailwind CSS"],
     challenge: "ShineWorks needed a professional website that showcased their premium mobile car detailing services while allowing customers to easily book appointments. The site needed to look exceptional on both desktop and mobile devices.",
@@ -110,7 +110,7 @@ export const portfolioItems = [
     id: "bucks-county-soccer-tournament",
     title: "Bucks County Soccer Tournament",
     description: "Professional tournament website with team registration, match scheduling, and real-time results tracking.",
-    image: "https://buckscountysoccertournament.com/",
+    image: "/images/bucks-county-soccer.png",
     imageAlt: "Bucks County Soccer Tournament website screenshot",
     tags: ["Sports", "React", "TypeScript", "Tailwind CSS"],
     challenge: "The client needed a comprehensive tournament management system that could handle team registrations, match scheduling, and live score updates. The previous solution was manual and inefficient, causing delays and confusion for participants.",
@@ -139,7 +139,7 @@ export const portfolioItems = [
       {
         id: "shineworks-detailing",
         title: "ShineWorks Detailing",
-        image: "https://shineworksdetailing.replit.app/"
+        image: "/images/shineworks-detailing/thumbnail.jpg"
       }
     ]
   },
@@ -178,12 +178,12 @@ export const portfolioItems = [
       {
         id: "shineworks-detailing",
         title: "ShineWorks Detailing",
-        image: "https://shineworksdetailing.replit.app/"
+        image: "/images/shineworks-detailing/thumbnail.jpg"
       },
       {
         id: "bucks-county-soccer-tournament",
         title: "Bucks County Soccer Tournament",
-        image: "https://buckscountysoccertournament.com/"
+        image: "/images/bucks-county-soccer.png"
       }
     ]
   },
