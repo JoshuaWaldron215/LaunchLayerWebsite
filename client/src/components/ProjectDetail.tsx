@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
@@ -46,6 +46,13 @@ const ProjectDetail = ({
   url,
 }: ProjectDetailProps) => {
   const [activeTab, setActiveTab] = useState('overview');
+  
+  // Debug effect to log image URL
+  useEffect(() => {
+    console.log("Project ID:", id);
+    console.log("Project Image URL:", image);
+    console.log("Image includes 'buckscountysoccer':", image.includes('buckscountysoccer'));
+  }, [id, image]);
 
   // Main content below
 
@@ -105,7 +112,7 @@ const ProjectDetail = ({
             </div>
             <FadeIn direction="left">
               <div className="rounded-lg overflow-hidden shadow-2xl">
-                {image.startsWith('http') && image.includes('shineworks') ? (
+                {image.startsWith('http') && (image.includes('shineworks') || image.includes('buckscountysoccer')) ? (
                   <div className="aspect-video">
                     <iframe 
                       src={image} 
