@@ -120,8 +120,7 @@ export const portfolioItems = [
       "Automated team registration and payment system",
       "Dynamic tournament brackets with real-time updates",
       "Responsive design optimized for mobile viewing from the field",
-      "Administrative dashboard for tournament organizers",
-      "Integrated weather updates and field condition reports"
+      "Administrative dashboard for tournament director",
     ],
     technologies: [
       "React", 
@@ -132,7 +131,7 @@ export const portfolioItems = [
     ],
     testimonial: {
       quote: "The website that LaunchLayer developed for our tournament has transformed how we organize this annual event. The registration process is seamless, and the real-time score updates have been a huge hit with players and spectators alike.",
-      author: "Michael Torres",
+      author: "Ed Guerrero",
       position: "Tournament Director, Bucks County Soccer"
     },
     url: "https://buckscountysoccertournament.com/",
@@ -153,7 +152,7 @@ export const portfolioItems = [
     tags: ["UI/UX", "Redesign", "Responsive Design", "Education"],
     challenge: "The original Destination Imagination DMS system had an outdated, cluttered interface that was particularly difficult to use on mobile devices. Event participants and administrators struggled with the complex navigation, resulting in decreased engagement and increased support requests.",
     solution: "We redesigned the entire user interface with a focus on simplicity, clarity, and mobile-first design principles. The new design features an intuitive navigation system, streamlined forms, and a modern, accessible interface that works beautifully across all device sizes.",
-    results: "The redesigned DMS system has significantly improved user satisfaction with improved usability on mobile, cleaner navigation, and overall improved design from the original. There was a 78% reduction in support tickets and a 45% increase in mobile engagement. Administrators report completing tasks in half the time compared to the old system.",
+    results: "The redesigned DMS system has significantly improved user satisfaction with improved usability on mobile, cleaner navigation, and overall improved design from the original. Administrators report completing tasks in half the time compared to the old system.",
     features: [
       "Fully responsive design optimized for all device sizes",
       "Streamlined navigation with clear visual hierarchy",
@@ -167,7 +166,6 @@ export const portfolioItems = [
       "TypeScript", 
       "Tailwind CSS", 
       "Material UI", 
-      "Figma",
       "Responsive Design"
     ],
     testimonial: {

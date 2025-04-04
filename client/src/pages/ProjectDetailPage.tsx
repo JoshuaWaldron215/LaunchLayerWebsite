@@ -20,13 +20,14 @@ const expandedPortfolioData = portfolioItems.map(item => ({
   technologies: item.technologies || [
     'React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Node.js'
   ],
-  testimonial: item.id === 'destination-imagination-dms' 
+  testimonial: item.testimonial || (
+    item.id === 'destination-imagination-dms' 
     ? {
         quote: "This redesign much better and more seamless. I appreciate the thoughtfulness of the design, the card aspect for the team members is great, this is MUCH easier to read and use, and there are no visible CSS or layout errors anymore. The search is great, and the filter on the side for members, participants, spectators is great. The filter aspect and the other elements look great.",
         author: "Donald Aufiero",
         position: "Director of Software Engineering, Destination Imagination"
       }
-    : item.id === 'bucks-county-soccer' 
+    : item.id === 'bucks-county-soccer-tournament' 
     ? {
         quote: "The website that LaunchLayer developed for our tournament has transformed how we organize this annual event. The registration process is seamless, and the real-time score updates have been a huge hit with players and spectators alike.",
         author: "Ed Guerrero",
@@ -36,7 +37,8 @@ const expandedPortfolioData = portfolioItems.map(item => ({
         quote: "LaunchLayer perfectly captured our vision for a premium car detailing website. The online booking feature has dramatically improved our business operations, and customers love how easy it is to schedule services.",
         author: "James Rodriguez",
         position: "Owner, ShineWorks Detailing"
-      },
+      }
+  ),
   relatedProjects: portfolioItems
     .filter(relatedItem => relatedItem.id !== item.id)
     .slice(0, 3)
