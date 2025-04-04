@@ -186,31 +186,7 @@ export const portfolioItems = [
         image: "/images/bucks-county-soccer.png"
       }
     ]
-  },
-  {
-    id: "bistro-37",
-    title: "Bistro 37",
-    description: "Restaurant website with online reservation system and digital menu.",
-    image: "https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    imageAlt: "Restaurant website project",
-    tags: ["Restaurant", "WordPress", "Custom Theme"],
-  },
-  {
-    id: "taskflow",
-    title: "TaskFlow",
-    description: "SaaS product website with interactive demos and subscription management.",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    imageAlt: "SaaS product website project",
-    tags: ["SaaS", "Next.js", "Stripe"],
-  },
-  {
-    id: "edusphere",
-    title: "EduSphere",
-    description: "Online learning platform with course management and student progress tracking.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    imageAlt: "Education platform project",
-    tags: ["Education", "React", "Firebase"],
-  },
+  }
 ];
 
 // Testimonials Data
