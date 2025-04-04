@@ -110,7 +110,7 @@ export const portfolioItems = [
     id: "bucks-county-soccer-tournament",
     title: "Bucks County Soccer Tournament",
     description: "Professional tournament website with team registration, match scheduling, and real-time results tracking.",
-    image: "/images/bucks-county-soccer.png",
+    image: "https://buckscountysoccertournament.com/",
     imageAlt: "Bucks County Soccer Tournament website screenshot",
     tags: ["Sports", "React", "TypeScript", "Tailwind CSS"],
     challenge: "The client needed a comprehensive tournament management system that could handle team registrations, match scheduling, and live score updates. The previous solution was manual and inefficient, causing delays and confusion for participants.",

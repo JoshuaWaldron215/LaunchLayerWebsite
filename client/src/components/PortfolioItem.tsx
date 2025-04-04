@@ -24,7 +24,7 @@ const PortfolioItem: FC<PortfolioItemProps> = ({
       <Link href={id ? `/portfolio/${id}` : "#"}>
         <div className="block cursor-pointer">
           <div className="h-60 overflow-hidden relative">
-            {image.startsWith('http') && image.includes('shineworks') ? (
+            {image.startsWith('http') && (image.includes('shineworks') || image.includes('buckscountysoccer')) ? (
               <iframe 
                 src={image} 
                 title={title}

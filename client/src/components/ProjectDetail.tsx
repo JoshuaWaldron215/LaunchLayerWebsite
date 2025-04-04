@@ -140,7 +140,7 @@ const ProjectDetail = ({
             {/* Primary Screenshot */}
             <FadeIn direction="up" delay={0.2}>
               <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
-                {id === "shineworks-detailing" && image.includes('shineworks') ? (
+                {image.startsWith('http') && (image.includes('shineworks') || image.includes('buckscountysoccer')) ? (
                   <div className="aspect-video">
                     <iframe 
                       src={image} 
@@ -151,7 +151,7 @@ const ProjectDetail = ({
                   </div>
                 ) : (
                   <img 
-                    src={id === "bucks-county-soccer-tournament" ? "/images/bucks-county-soccer.png" : image} 
+                    src={image} 
                     alt={`${title} - Desktop View`}
                     className="w-full rounded-lg"
                   />
@@ -165,7 +165,7 @@ const ProjectDetail = ({
             {/* Secondary Screenshot - Mobile View */}
             <FadeIn direction="up" delay={0.4}>
               <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
-                {id === "shineworks-detailing" && image.includes('shineworks') ? (
+                {image.startsWith('http') && (image.includes('shineworks') || image.includes('buckscountysoccer')) ? (
                   <div className="aspect-[9/16] max-w-[300px] mx-auto">
                     <iframe 
                       src={image} 
@@ -176,7 +176,7 @@ const ProjectDetail = ({
                   </div>
                 ) : (
                   <img 
-                    src={id === "bucks-county-soccer-tournament" ? "/images/bucks-county-soccer-mobile.png" : image} 
+                    src={image} 
                     alt={`${title} - Responsive Mobile View`}
                     className="w-full rounded-lg"
                   />
@@ -311,7 +311,7 @@ const ProjectDetail = ({
                   <Link href={`/portfolio/${project.id}`} className="block group cursor-pointer h-full">
                     <div className="relative overflow-hidden rounded-lg shadow-md h-full bg-white border border-gray-100">
                       <div className="aspect-video overflow-hidden">
-                        {project.image.startsWith('http') && project.image.includes('shineworks') ? (
+                        {project.image.startsWith('http') && (project.image.includes('shineworks') || project.image.includes('buckscountysoccer')) ? (
                           <iframe 
                             src={project.image} 
                             title={project.title}
