@@ -113,7 +113,16 @@ const ProjectDetail = ({
             </div>
             <FadeIn direction="left">
               <div className="rounded-lg overflow-hidden shadow-2xl">
-                {image.startsWith('http') && (image.includes('shineworks') || image.includes('buckscountysoccer')) ? (
+                {id === 'destination-imagination-dms' ? (
+                  <div className="aspect-video">
+                    <iframe 
+                      src="https://destination-imagination-redesign.vercel.app/" 
+                      title={title}
+                      className="w-full h-full border-0" 
+                      loading="lazy"
+                    />
+                  </div>
+                ) : image.startsWith('http') && (image.includes('shineworks') || image.includes('buckscountysoccer')) ? (
                   <div className="aspect-video">
                     <iframe 
                       src={image} 
@@ -145,26 +154,30 @@ const ProjectDetail = ({
           </FadeIn>
           
           {id === 'destination-imagination-dms' ? (
-            // Special Before/After Slider for Destination Imagination project
+            // Only show "Before" screenshots for Destination Imagination project
             <FadeIn direction="up">
-              <BeforeAfterSlider 
-                beforeImages={[
-                  '/images/destination-imagination/before1.png',
-                  '/images/destination-imagination/before2.png',
-                  '/images/destination-imagination/before3.png'
-                ]}
-                afterImages={[
-                  '/images/destination-imagination/after1.png',
-                  '/images/destination-imagination/after2.png',
-                  '/images/destination-imagination/after1.png' // Duplicated as placeholder for now
-                ]}
-                beforeLabel="Before Redesign"
-                afterLabel="After Redesign"
-              />
-              <p className="text-center mt-8 text-gray-600 max-w-2xl mx-auto">
-                This comparison shows the transformation from a cluttered, complex interface to a clean, 
-                modern design focused on usability and visual clarity.
-              </p>
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold mb-8 text-center">Before the Redesign</h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {[
+                    '/images/destination-imagination/before1.png',
+                    '/images/destination-imagination/before2.png',
+                    '/images/destination-imagination/before3.png'
+                  ].map((img, idx) => (
+                    <div key={idx} className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
+                      <img 
+                        src={img} 
+                        alt={`Original Design Screenshot ${idx+1}`}
+                        className="w-full rounded-lg"
+                      />
+                    </div>
+                  ))}
+                </div>
+                <p className="text-center mt-8 text-gray-600 max-w-2xl mx-auto">
+                  These screenshots show the original interface before our redesign - cluttered, complex, and difficult to navigate.
+                  The live site embedded at the top of this page demonstrates our modern, user-friendly solution.
+                </p>
+              </div>
             </FadeIn>
           ) : (
             // Standard layout for other projects
@@ -346,7 +359,14 @@ const ProjectDetail = ({
                   <Link href={`/portfolio/${project.id}`} className="block group cursor-pointer h-full">
                     <div className="relative overflow-hidden rounded-lg shadow-md h-full bg-white border border-gray-100">
                       <div className="aspect-video overflow-hidden">
-                        {project.image.startsWith('http') && (project.image.includes('shineworks') || project.image.includes('buckscountysoccer')) ? (
+                        {project.id === 'destination-imagination-dms' ? (
+                          <iframe 
+                            src="https://destination-imagination-redesign.vercel.app/" 
+                            title={project.title}
+                            className="w-full h-full border-0" 
+                            loading="lazy"
+                          />
+                        ) : project.image.startsWith('http') && (project.image.includes('shineworks') || project.image.includes('buckscountysoccer')) ? (
                           <iframe 
                             src={project.image} 
                             title={project.title}
