@@ -7,17 +7,17 @@ import NotFound from './not-found';
 // Expanded portfolio data with more details
 const expandedPortfolioData = portfolioItems.map(item => ({
   ...item,
-  challenge: `For the ${item.title} project, we faced challenges with creating a responsive design that worked across all devices while maintaining fast load times and a clean user experience.`,
-  solution: `We implemented a mobile-first design approach with progressive enhancement, optimized images, and utilized modern front-end techniques to ensure fast loading and a seamless user experience across devices.`,
-  results: `The redesigned ${item.title} website saw a 40% increase in mobile engagement, 25% longer session duration, and a 15% improvement in conversion rates within the first month after launch.`,
-  features: [
+  challenge: item.challenge || `For the ${item.title} project, we faced challenges with creating a responsive design that worked across all devices while maintaining fast load times and a clean user experience.`,
+  solution: item.solution || `We implemented a mobile-first design approach with progressive enhancement, optimized images, and utilized modern front-end techniques to ensure fast loading and a seamless user experience across devices.`,
+  results: item.results || `The redesigned ${item.title} website saw a 40% increase in mobile engagement, 25% longer session duration, and a 15% improvement in conversion rates within the first month after launch.`,
+  features: item.features || [
     'Fully responsive design across all devices',
     'Optimized page load times with lazy loading',
     'Interactive UI elements for improved user engagement',
     'Integrated content management system',
     'Advanced analytics and conversion tracking'
   ],
-  technologies: [
+  technologies: item.technologies || [
     'React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Node.js'
   ],
   testimonial: item.id === 'destination-imagination-dms' 

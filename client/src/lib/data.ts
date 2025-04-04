@@ -153,7 +153,7 @@ export const portfolioItems = [
     tags: ["UI/UX", "Redesign", "Responsive Design", "Education"],
     challenge: "The original Destination Imagination DMS system had an outdated, cluttered interface that was particularly difficult to use on mobile devices. Event participants and administrators struggled with the complex navigation, resulting in decreased engagement and increased support requests.",
     solution: "We redesigned the entire user interface with a focus on simplicity, clarity, and mobile-first design principles. The new design features an intuitive navigation system, streamlined forms, and a modern, accessible interface that works beautifully across all device sizes.",
-    results: "The redesigned DMS system has significantly improved user satisfaction with a 78% reduction in support tickets and a 45% increase in mobile engagement. Administrators report completing tasks in half the time compared to the old system.",
+    results: "The redesigned DMS system has significantly improved user satisfaction with improved usability on mobile, cleaner navigation, and overall improved design from the original. There was a 78% reduction in support tickets and a 45% increase in mobile engagement. Administrators report completing tasks in half the time compared to the old system.",
     features: [
       "Fully responsive design optimized for all device sizes",
       "Streamlined navigation with clear visual hierarchy",
