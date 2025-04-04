@@ -219,7 +219,7 @@ export const testimonials = [
     quote: "The website that LaunchLayer developed for our tournament has transformed how we organize this annual event. The registration process is seamless, and the real-time score updates have been a huge hit with players and spectators alike.",
     author: "Ed Guerrero",
     position: "Tournament Director, Bucks County Soccer",
-    image: "",
+    image: "https://via.placeholder.com/100",
   },
   {
     quote: "LaunchLayer perfectly captured our vision for a premium car detailing website. The online booking feature has dramatically improved our business operations, and customers love how easy it is to schedule services.",
