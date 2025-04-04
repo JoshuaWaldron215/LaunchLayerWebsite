@@ -59,10 +59,11 @@ const ProjectDetail = ({
 
   return (
     <div className="bg-white">
-      {/* Back to Portfolio Link - Fixed at the top with better visibility */}
-      <div className="bg-gradient-to-br from-secondary to-primary pt-6 pb-4 px-8">
+      {/* Project Header with Back to Portfolio Link */}
+      <section className="pt-6 pb-20 px-8 bg-gradient-to-br from-secondary to-primary overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <Link href="/portfolio" className="inline-flex items-center text-base font-medium bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-md transition-colors cursor-pointer shadow-md">
+          {/* Back to Portfolio Link */}
+          <Link href="/portfolio" className="inline-flex items-center text-base font-medium bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-md transition-colors cursor-pointer shadow-md mb-10">
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               className="h-5 w-5 mr-2" 
@@ -74,13 +75,8 @@ const ProjectDetail = ({
             </svg>
             Back to Portfolio
           </Link>
-        </div>
-      </div>
-
-      {/* Project Header */}
-      <section className="pt-6 pb-20 px-8 bg-gradient-to-br from-secondary to-primary overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center mt-6">
             <div>
               <TextReveal 
                 text={title}
