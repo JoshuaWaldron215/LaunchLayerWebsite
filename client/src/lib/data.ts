@@ -72,7 +72,7 @@ export const portfolioItems = [
     id: "shineworks-detailing",
     title: "ShineWorks Detailing",
     description: "Premium mobile car detailing service website with responsive design and online booking system.",
-    image: "https://images.unsplash.com/photo-1575844264771-892081089af5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "https://shineworksdetailing.replit.app/",
     imageAlt: "ShineWorks Detailing website screenshot",
     tags: ["Automotive", "React", "TypeScript", "Tailwind CSS"],
     challenge: "ShineWorks needed a professional website that showcased their premium mobile car detailing services while allowing customers to easily book appointments. The site needed to look exceptional on both desktop and mobile devices.",
@@ -140,7 +140,7 @@ export const portfolioItems = [
       {
         id: "shineworks-detailing",
         title: "ShineWorks Detailing",
-        image: "https://images.unsplash.com/photo-1575844264771-892081089af5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        image: "https://shineworksdetailing.replit.app/"
       }
     ]
   },

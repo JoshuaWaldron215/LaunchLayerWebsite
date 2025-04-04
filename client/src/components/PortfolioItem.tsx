@@ -24,11 +24,20 @@ const PortfolioItem: FC<PortfolioItemProps> = ({
       <Link href={id ? `/portfolio/${id}` : "#"}>
         <div className="block cursor-pointer">
           <div className="h-60 overflow-hidden relative">
-            <img 
-              src={image} 
-              alt={imageAlt} 
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
+            {image.startsWith('http') && image.includes('shineworks') ? (
+              <iframe 
+                src={image} 
+                title={title}
+                className="w-full h-full border-0" 
+                loading="lazy"
+              />
+            ) : (
+              <img 
+                src={image} 
+                alt={imageAlt} 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
               <motion.div 
                 className="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium"
