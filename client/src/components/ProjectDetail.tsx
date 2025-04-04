@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { FadeIn, TextReveal } from '@/components/animations';
+import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 
 interface ProjectDetailProps {
   id: string;
@@ -143,63 +144,90 @@ const ProjectDetail = ({
             </h2>
           </FadeIn>
           
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-            {/* Primary Screenshot */}
-            <FadeIn direction="up" delay={0.2}>
-              <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
-                {image.startsWith('http') && (image.includes('shineworks') || image.includes('buckscountysoccer')) ? (
-                  <div className="aspect-video">
-                    <iframe 
-                      src={image} 
-                      title={`${title} - Desktop View`}
-                      className="w-full h-full border-0 rounded-lg" 
-                      loading="lazy"
-                    />
-                  </div>
-                ) : (
-                  <img 
-                    src={image} 
-                    alt={`${title} - Desktop View`}
-                    className="w-full rounded-lg"
-                  />
-                )}
-                <p className="text-center mt-4 text-gray-600">
-                  Desktop view
-                </p>
-              </div>
+          {id === 'destination-imagination-dms' ? (
+            // Special Before/After Slider for Destination Imagination project
+            <FadeIn direction="up">
+              <BeforeAfterSlider 
+                beforeImages={[
+                  '/images/destination-imagination/before1.png',
+                  '/images/destination-imagination/before2.png',
+                  '/images/destination-imagination/before3.png'
+                ]}
+                afterImages={[
+                  '/images/destination-imagination/after1.png',
+                  '/images/destination-imagination/after2.png',
+                  '/images/destination-imagination/after1.png' // Duplicated as placeholder for now
+                ]}
+                beforeLabel="Before Redesign"
+                afterLabel="After Redesign"
+              />
+              <p className="text-center mt-8 text-gray-600 max-w-2xl mx-auto">
+                This comparison shows the transformation from a cluttered, complex interface to a clean, 
+                modern design focused on usability and visual clarity.
+              </p>
             </FadeIn>
-            
-            {/* Secondary Screenshot - Mobile View */}
-            <FadeIn direction="up" delay={0.4}>
-              <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
-                {image.startsWith('http') && (image.includes('shineworks') || image.includes('buckscountysoccer')) ? (
-                  <div className="aspect-[9/16] max-w-[300px] mx-auto">
-                    <iframe 
-                      src={image} 
-                      title={`${title} - Mobile View`}
-                      className="w-full h-full border-0 rounded-lg" 
-                      loading="lazy"
-                    />
+          ) : (
+            // Standard layout for other projects
+            <>
+              <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+                {/* Primary Screenshot */}
+                <FadeIn direction="up" delay={0.2}>
+                  <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
+                    {image.startsWith('http') && (image.includes('shineworks') || image.includes('buckscountysoccer')) ? (
+                      <div className="aspect-video">
+                        <iframe 
+                          src={image} 
+                          title={`${title} - Desktop View`}
+                          className="w-full h-full border-0 rounded-lg" 
+                          loading="lazy"
+                        />
+                      </div>
+                    ) : (
+                      <img 
+                        src={image} 
+                        alt={`${title} - Desktop View`}
+                        className="w-full rounded-lg"
+                      />
+                    )}
+                    <p className="text-center mt-4 text-gray-600">
+                      Desktop view
+                    </p>
                   </div>
-                ) : (
-                  <img 
-                    src={image} 
-                    alt={`${title} - Responsive Mobile View`}
-                    className="w-full rounded-lg"
-                  />
-                )}
-                <p className="text-center mt-4 text-gray-600">
-                  Responsive mobile design
-                </p>
+                </FadeIn>
+                
+                {/* Secondary Screenshot - Mobile View */}
+                <FadeIn direction="up" delay={0.4}>
+                  <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
+                    {image.startsWith('http') && (image.includes('shineworks') || image.includes('buckscountysoccer')) ? (
+                      <div className="aspect-[9/16] max-w-[300px] mx-auto">
+                        <iframe 
+                          src={image} 
+                          title={`${title} - Mobile View`}
+                          className="w-full h-full border-0 rounded-lg" 
+                          loading="lazy"
+                        />
+                      </div>
+                    ) : (
+                      <img 
+                        src={image} 
+                        alt={`${title} - Responsive Mobile View`}
+                        className="w-full rounded-lg"
+                      />
+                    )}
+                    <p className="text-center mt-4 text-gray-600">
+                      Responsive mobile design
+                    </p>
+                  </div>
+                </FadeIn>
               </div>
-            </FadeIn>
-          </div>
-          
-          <FadeIn direction="up" delay={0.6}>
-            <p className="text-center mt-8 text-gray-600 max-w-2xl mx-auto">
-              These screenshots showcase the project's design and functionality across different devices.
-            </p>
-          </FadeIn>
+              
+              <FadeIn direction="up" delay={0.6}>
+                <p className="text-center mt-8 text-gray-600 max-w-2xl mx-auto">
+                  These screenshots showcase the project's design and functionality across different devices.
+                </p>
+              </FadeIn>
+            </>
+          )}
         </div>
       </section>
 

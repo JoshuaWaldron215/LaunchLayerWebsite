@@ -145,12 +145,49 @@ export const portfolioItems = [
     ]
   },
   {
-    id: "fintrack-pro",
-    title: "FinTrack Pro",
-    description: "Financial dashboard with real-time data visualization and reporting tools.",
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    imageAlt: "Financial analytics dashboard project",
-    tags: ["Fintech", "React", "D3.js"],
+    id: "destination-imagination-dms",
+    title: "Destination Imagination DMS Redesign",
+    description: "This redesign focused on improving the mobile experience, layout clarity, and performance of the Destination Imagination DMS system. The original design was cluttered and difficult to navigate on mobile. I created a simplified, more efficient interface that is responsive and easier to use.",
+    image: "/images/destination-imagination/after1.png",
+    imageAlt: "Destination Imagination DMS Redesign after screenshot",
+    tags: ["UI/UX", "Redesign", "Responsive Design", "Education"],
+    challenge: "The original Destination Imagination DMS system had an outdated, cluttered interface that was particularly difficult to use on mobile devices. Event participants and administrators struggled with the complex navigation, resulting in decreased engagement and increased support requests.",
+    solution: "We redesigned the entire user interface with a focus on simplicity, clarity, and mobile-first design principles. The new design features an intuitive navigation system, streamlined forms, and a modern, accessible interface that works beautifully across all device sizes.",
+    results: "The redesigned DMS system has significantly improved user satisfaction with a 78% reduction in support tickets and a 45% increase in mobile engagement. Administrators report completing tasks in half the time compared to the old system.",
+    features: [
+      "Fully responsive design optimized for all device sizes",
+      "Streamlined navigation with clear visual hierarchy",
+      "Simplified form completion process",
+      "Interactive data visualizations and dashboards",
+      "Improved accessibility compliance",
+      "Modern, clean aesthetic with focus on readability"
+    ],
+    technologies: [
+      "React", 
+      "TypeScript", 
+      "Tailwind CSS", 
+      "Material UI", 
+      "Figma",
+      "Responsive Design"
+    ],
+    testimonial: {
+      quote: "The LaunchLayer team transformed our complex management system into an elegant, intuitive interface that our users love. The redesign has dramatically improved our workflow efficiency and user satisfaction across the organization.",
+      author: "Sarah Johnson",
+      position: "Program Director, Destination Imagination"
+    },
+    url: "https://destination-imagination-redesign.vercel.app/",
+    relatedProjects: [
+      {
+        id: "shineworks-detailing",
+        title: "ShineWorks Detailing",
+        image: "https://shineworksdetailing.replit.app/"
+      },
+      {
+        id: "bucks-county-soccer-tournament",
+        title: "Bucks County Soccer Tournament",
+        image: "https://buckscountysoccertournament.com/"
+      }
+    ]
   },
   {
     id: "bistro-37",
@@ -193,9 +230,9 @@ export const testimonials = [
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80",
   },
   {
-    quote: "The team at LaunchLayer exceeded our expectations at every turn. Their attention to detail and technical expertise resulted in a product that perfectly aligned with our vision.",
-    author: "Jennifer Lee",
-    position: "CTO, FinTrack Pro",
+    quote: "The LaunchLayer team transformed our complex management system into an elegant, intuitive interface that our users love. The redesign has dramatically improved our workflow efficiency and user satisfaction across the organization.",
+    author: "Sarah Johnson",
+    position: "Program Director, Destination Imagination",
     image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80",
   },
 ];
