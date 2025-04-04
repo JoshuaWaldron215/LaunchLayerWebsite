@@ -24,32 +24,13 @@ const PortfolioItem: FC<PortfolioItemProps> = ({
       <Link href={id ? `/portfolio/${id}` : "#"}>
         <div className="block cursor-pointer">
           <div className="h-60 overflow-hidden relative">
-            {image.startsWith('http') && image.includes('shineworks') ? (
+            {image.startsWith('http') && (image.includes('shineworks') || image.includes('buckscountysoccer')) ? (
               <iframe 
                 src={image} 
                 title={title}
                 className="w-full h-full border-0" 
                 loading="lazy"
               />
-            ) : id === "bucks-county-soccer-tournament" ? (
-              <>
-                <img 
-                  src="/images/bucks-county-soccer.png" 
-                  alt={imageAlt} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent py-1 px-2">
-                  <a 
-                    href="https://buckscountysoccertournament.com/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-xs text-white/90 hover:text-white"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    View Live Site ↗
-                  </a>
-                </div>
-              </>
             ) : (
               <img 
                 src={image} 
