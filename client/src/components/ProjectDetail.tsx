@@ -26,6 +26,7 @@ interface ProjectDetailProps {
     title: string;
     image: string;
   }>;
+  url?: string;
 }
 
 const ProjectDetail = ({
@@ -42,6 +43,7 @@ const ProjectDetail = ({
   technologies,
   testimonial,
   relatedProjects,
+  url,
 }: ProjectDetailProps) => {
   const [activeTab, setActiveTab] = useState('overview');
 
@@ -92,11 +94,13 @@ const ProjectDetail = ({
                     </span>
                   ))}
                 </div>
-                <a href="https://buckscountysoccertournament.com/" target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-white text-primary hover:bg-white/90">
-                    View Live Website
-                  </Button>
-                </a>
+                {url && (
+                  <a href={url} target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-white text-primary hover:bg-white/90">
+                      View Live Website
+                    </Button>
+                  </a>
+                )}
               </FadeIn>
             </div>
             <FadeIn direction="left">
@@ -126,7 +130,7 @@ const ProjectDetail = ({
             <FadeIn direction="up" delay={0.2}>
               <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
                 <img 
-                  src="/images/bucks-county-soccer.png" 
+                  src={id === "bucks-county-soccer-tournament" ? "/images/bucks-county-soccer.png" : image} 
                   alt={`${title} - Desktop View`}
                   className="w-full rounded-lg"
                 />
@@ -136,11 +140,11 @@ const ProjectDetail = ({
               </div>
             </FadeIn>
             
-            {/* Secondary Screenshot (using same image for demo) */}
+            {/* Secondary Screenshot - Mobile View */}
             <FadeIn direction="up" delay={0.4}>
               <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
                 <img 
-                  src="/images/bucks-county-soccer-mobile.png" 
+                  src={id === "bucks-county-soccer-tournament" ? "/images/bucks-county-soccer-mobile.png" : image} 
                   alt={`${title} - Responsive Mobile View`}
                   className="w-full rounded-lg"
                 />

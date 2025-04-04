@@ -69,6 +69,44 @@ export const features = [
 // Portfolio Items
 export const portfolioItems = [
   {
+    id: "shineworks-detailing",
+    title: "ShineWorks Detailing",
+    description: "Premium mobile car detailing service website with responsive design and online booking system.",
+    image: "https://images.unsplash.com/photo-1575844264771-892081089af5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    imageAlt: "ShineWorks Detailing website screenshot",
+    tags: ["Automotive", "React", "TypeScript", "Tailwind CSS"],
+    challenge: "ShineWorks needed a professional website that showcased their premium mobile car detailing services while allowing customers to easily book appointments. The site needed to look exceptional on both desktop and mobile devices.",
+    solution: "We developed a sleek, modern website with a mobile-first approach that highlights their services with high-quality imagery. The booking system integrates with their calendar, making appointment scheduling seamless for both customers and staff.",
+    results: "Since launching the new website, ShineWorks has seen a 65% increase in online bookings and improved customer engagement. The mobile-optimized design has significantly increased conversions from smartphone users.",
+    features: [
+      "Online booking and appointment scheduling system",
+      "Service package showcase with detailed pricing",
+      "Before/after gallery with customer transformations",
+      "Mobile-first responsive design",
+      "Client testimonials and reviews integration"
+    ],
+    technologies: [
+      "React", 
+      "TypeScript", 
+      "Tailwind CSS", 
+      "Framer Motion",
+      "Custom APIs"
+    ],
+    testimonial: {
+      quote: "LaunchLayer perfectly captured our vision for a premium car detailing website. The online booking feature has dramatically improved our business operations, and customers love how easy it is to schedule services.",
+      author: "James Rodriguez",
+      position: "Owner, ShineWorks Detailing"
+    },
+    url: "https://shineworksdetailing.replit.app/",
+    relatedProjects: [
+      {
+        id: "bucks-county-soccer-tournament",
+        title: "Bucks County Soccer Tournament",
+        image: "/images/bucks-county-soccer.png"
+      }
+    ]
+  },
+  {
     id: "bucks-county-soccer-tournament",
     title: "Bucks County Soccer Tournament",
     description: "Professional tournament website with team registration, match scheduling, and real-time results tracking.",
@@ -96,15 +134,15 @@ export const portfolioItems = [
       quote: "The website that LaunchLayer developed for our tournament has transformed how we organize this annual event. The registration process is seamless, and the real-time score updates have been a huge hit with players and spectators alike.",
       author: "Michael Torres",
       position: "Tournament Director, Bucks County Soccer"
-    }
-  },
-  {
-    id: "metro-realty",
-    title: "MetroRealty",
-    description: "Property listing website with advanced search and interactive map integration.",
-    image: "https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    imageAlt: "Real estate website project",
-    tags: ["Real Estate", "Vue.js", "Google Maps API"],
+    },
+    url: "https://buckscountysoccertournament.com/",
+    relatedProjects: [
+      {
+        id: "shineworks-detailing",
+        title: "ShineWorks Detailing",
+        image: "https://images.unsplash.com/photo-1575844264771-892081089af5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      }
+    ]
   },
   {
     id: "fintrack-pro",
@@ -149,9 +187,9 @@ export const testimonials = [
     image: "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80",
   },
   {
-    quote: "Working with LaunchLayer was a game-changer for our business. They developed a custom e-commerce solution that has streamlined our operations and improved our customer experience dramatically.",
-    author: "David Miller",
-    position: "Founder, MetroRealty",
+    quote: "LaunchLayer perfectly captured our vision for a premium car detailing website. The online booking feature has dramatically improved our business operations, and customers love how easy it is to schedule services.",
+    author: "James Rodriguez",
+    position: "Owner, ShineWorks Detailing",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80",
   },
   {
