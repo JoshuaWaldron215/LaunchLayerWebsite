@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { portfolioItems } from "@/lib/data";
 import PortfolioItem from "@/components/PortfolioItem";
+import SocialProofSection from "@/components/SocialProofSection";
 import { 
   FadeIn, 
   ScaleIn, 
@@ -10,8 +11,7 @@ import {
   StaggerItem, 
   ParallaxScroll, 
   TextReveal,
-  HoverCard,
-  CountUpAnimation
+  HoverCard
 } from "@/components/animations";
 
 const Portfolio = () => {
@@ -101,97 +101,8 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Client Logos Section */}
-      <section className="py-20 px-8 bg-secondary">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <FadeIn direction="up">
-              <h2 className="text-3xl font-bold mb-4">Trusted By</h2>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.2}>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                We've had the pleasure of working with a diverse range of clients across multiple industries.
-              </p>
-            </FadeIn>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 place-items-center">
-            {[
-              { icon: "fab fa-amazon", delay: 0.1 },
-              { icon: "fab fa-microsoft", delay: 0.2 },
-              { icon: "fab fa-spotify", delay: 0.3 },
-              { icon: "fab fa-slack", delay: 0.4 }
-            ].map((item, index) => (
-              <FadeIn key={index} direction="up" delay={item.delay}>
-                <motion.div 
-                  className="text-5xl text-gray-400 hover:text-accent transition-colors duration-300"
-                  whileHover={{ 
-                    scale: 1.2,
-                    rotate: [-5, 5, 0],
-                    transition: { 
-                      rotate: { duration: 0.5, ease: "easeInOut" } 
-                    }
-                  }}
-                >
-                  <i className={item.icon}></i>
-                </motion.div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Project Stats */}
-      <section className="py-20 px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <Stagger staggerDelay={0.2}>
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              {[
-                { number: "50+", text: "Projects Completed" },
-                { number: "99%", text: "Client Satisfaction" },
-                { number: "5+", text: "Years Experience" }
-              ].map((stat, index) => (
-                <StaggerItem key={index} direction="up">
-                  <div>
-                    <motion.div 
-                      className="text-5xl font-bold text-accent mb-2"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ 
-                        opacity: 1, 
-                        y: 0,
-                        transition: {
-                          duration: 0.8,
-                          ease: "easeOut"
-                        }
-                      }}
-                      viewport={{ once: true }}
-                    >
-                      <CountUpAnimation 
-                        targetNumber={stat.number} 
-                        duration={2} 
-                      />
-                    </motion.div>
-                    <motion.p 
-                      className="text-gray-600"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ 
-                        opacity: 1,
-                        transition: {
-                          duration: 0.5,
-                          delay: 0.3
-                        }
-                      }}
-                      viewport={{ once: true }}
-                    >
-                      {stat.text}
-                    </motion.p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </div>
-          </Stagger>
-        </div>
-      </section>
+      {/* Social Proof Section */}
+      <SocialProofSection />
 
       {/* CTA Section */}
       <section className="py-20 px-8 bg-accent text-white">

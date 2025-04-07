@@ -17,16 +17,16 @@ interface ClientLogo {
 
 const stats: StatItem[] = [
   {
-    value: '96%',
+    value: '99%',
     label: 'Client Satisfaction',
   },
   {
-    value: '45+',
+    value: '50+',
     label: 'Projects Completed',
   },
   {
-    value: '3',
-    label: 'Years of Excellence',
+    value: '5+',
+    label: 'Years Experience',
   },
   {
     value: '100%',
