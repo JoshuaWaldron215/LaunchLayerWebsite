@@ -1,7 +1,8 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { features, testimonials } from "@/lib/data";
+import { features, testimonials, faqs } from "@/lib/data";
 import TestimonialCard from "@/components/TestimonialCard";
+import FAQAccordion from "@/components/FAQAccordion";
 import SEO from "@/components/SEO";
 import { 
   FadeIn, 
@@ -170,6 +171,25 @@ const Home = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-20 px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <FAQAccordion 
+            faqs={faqs.slice(0, 4)} 
+            title="Frequently Asked Questions"
+            description="Find answers to common questions about our web development services"
+          />
+          <div className="text-center mt-8">
+            <Link 
+              href="/contact"
+              className="inline-block bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-lg transition-colors duration-300 font-medium"
+            >
+              Ask Us a Question
+            </Link>
+          </div>
+        </div>
+      </section>
+      
       {/* CTA Section */}
       <section className="py-20 px-8 bg-accent text-white overflow-hidden">
         <div className="max-w-7xl mx-auto text-center">

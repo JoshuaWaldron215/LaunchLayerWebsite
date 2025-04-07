@@ -210,3 +210,39 @@ export const testimonials = [
     image: "/images/donald-aufiero.jpg",
   },
 ];
+
+// FAQ Data
+export const faqs = [
+  {
+    question: "What services does LaunchLayer offer?",
+    answer: "LaunchLayer specializes in creating professional, custom websites for businesses and organizations. Our services include responsive web design, e-commerce development, custom web applications, SEO optimization, website maintenance, and hosting services. We offer three main packages (Starter, Standard, and Premium) to accommodate different business needs and budgets."
+  },
+  {
+    question: "How much does a website cost?",
+    answer: "Our website pricing depends on your specific needs and requirements. Our packages start at $150 for a basic landing page and can range up to $1050+ for comprehensive business websites with advanced features. For a personalized quote, we recommend using our <a href='/services#cost-calculator' class='text-primary hover:underline'>Cost Calculator</a> or <a href='/contact' class='text-primary hover:underline'>contacting us</a> directly with your project details."
+  },
+  {
+    question: "How long does it take to build a website?",
+    answer: "The timeline for website development varies based on complexity and scope. A simple landing page might take 1-2 weeks, while a more complex website with custom features could take 4-8 weeks. During our initial consultation, we'll provide you with a more accurate timeline based on your specific requirements and project goals."
+  },
+  {
+    question: "Do you offer website maintenance services?",
+    answer: "Yes, we offer ongoing website maintenance services to keep your site secure, up-to-date, and performing optimally. Our monthly maintenance packages include regular updates, security monitoring, content changes, performance optimization, and technical support. Maintenance plans start at $50-$75 per month depending on your website's complexity and needs."
+  },
+  {
+    question: "Will my website work on mobile devices?",
+    answer: "Absolutely! All our websites are built with responsive design as a standard feature. This means your site will automatically adjust and look great on all devices, including smartphones, tablets, laptops, and desktop computers. Mobile optimization is crucial for both user experience and search engine rankings, so we ensure your site performs flawlessly across all screen sizes."
+  },
+  {
+    question: "Do you provide hosting for websites?",
+    answer: "Yes, we offer reliable hosting solutions for all the websites we build. Our hosting services include regular backups, security monitoring, and technical support. We can set up hosting for you as part of your website package, with a one-time setup fee of $50-$75. We also work with clients who prefer to use their existing hosting providers."
+  },
+  {
+    question: "Can you help me with my existing website?",
+    answer: "Yes, we can help with existing websites. Our services include website redesigns, performance optimization, content updates, security improvements, and adding new features to your current site. We'll start with a comprehensive audit of your existing website to identify issues and opportunities for improvement."
+  },
+  {
+    question: "How do we get started on my project?",
+    answer: "Getting started is easy! The first step is to <a href='/contact' class='text-primary hover:underline'>contact us</a> through our website or give us a call at (215) 207-5885. We'll schedule an initial consultation to discuss your project requirements, goals, timeline, and budget. After understanding your needs, we'll provide you with a detailed proposal and quote. Once approved, we'll begin the design and development process with regular updates and opportunities for feedback."
+  }
+];
