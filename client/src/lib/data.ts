@@ -223,7 +223,7 @@ export const faqs = [
   },
   {
     question: "How long does it take to build a website?",
-    answer: "The timeline for website development varies based on complexity and scope. A simple landing page might take 1-2 weeks, while a more complex website with custom features could take 4-8 weeks. During our initial consultation, we'll provide you with a more accurate timeline based on your specific requirements and project goals."
+    answer: "The timeline for website development varies based on complexity and scope. A simple landing page might take up to 1 week, while a more complex website with custom features could take 2-4 weeks. During our initial consultation, we'll provide you with a more accurate timeline based on your specific requirements and project goals."
   },
   {
     question: "Do you offer website maintenance services?",

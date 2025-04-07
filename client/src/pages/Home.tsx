@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { features, testimonials, faqs } from "@/lib/data";
 import TestimonialCard from "@/components/TestimonialCard";
 import FAQAccordion from "@/components/FAQAccordion";
+import SocialProofSection from "@/components/SocialProofSection";
 import SEO from "@/components/SEO";
 import { 
   FadeIn, 
@@ -137,6 +138,9 @@ const Home = () => {
           </Stagger>
         </div>
       </section>
+      
+      {/* Social Proof Section */}
+      <SocialProofSection />
 
       {/* Testimonials Section */}
       <section className="py-20 px-8 bg-secondary">
