@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { services, features } from "@/lib/data";
 import ServiceCard from "@/components/ServiceCard";
 import SEO from "@/components/SEO";
+import CostCalculator from "@/components/CostCalculator";
 import { 
   FadeIn, 
   ScaleIn, 
@@ -208,8 +209,28 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Project Cost Calculator Section */}
+      <section className="py-20 px-8 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <FadeIn direction="up">
+              <h2 className="text-3xl font-bold mb-4">Project Cost Calculator</h2>
+            </FadeIn>
+            <FadeIn direction="up" delay={0.2}>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Get an instant estimate for your web development project
+              </p>
+            </FadeIn>
+          </div>
+          
+          <FadeIn direction="up" delay={0.4}>
+            <CostCalculator />
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Process Section */}
-      <section className="py-20 px-8 bg-white">
+      <section className="py-20 px-8 bg-secondary">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <FadeIn direction="up">
