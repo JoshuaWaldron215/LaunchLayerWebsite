@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
@@ -16,6 +16,7 @@ const CostCalculator = () => {
   const [pageCount, setPageCount] = useState<number>(1);
   const [designComplexity, setDesignComplexity] = useState<string>("standard");
   const [timeframe, setTimeframe] = useState<string>("standard");
+  const [activeTab, setActiveTab] = useState<string>("options");
   
   // Features state
   const [features, setFeatures] = useState({
@@ -160,7 +161,11 @@ const CostCalculator = () => {
           </CardDescription>
         </CardHeader>
         
-        <Tabs defaultValue="options" className="w-full">
+        <Tabs 
+          value={activeTab} 
+          onValueChange={setActiveTab}
+          className="w-full"
+        >
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="options">Project Options</TabsTrigger>
             <TabsTrigger value="results">Results</TabsTrigger>
@@ -375,12 +380,7 @@ const CostCalculator = () => {
               }}>
                 Reset
               </Button>
-              <Button onClick={() => {
-                const element = document.querySelector('[data-value="results"]');
-                if (element instanceof HTMLElement) {
-                  element.click();
-                }
-              }}>
+              <Button onClick={() => setActiveTab("results")}>
                 Calculate
               </Button>
             </CardFooter>
@@ -498,12 +498,7 @@ const CostCalculator = () => {
             <CardFooter className="flex justify-between gap-4 border-t pt-6">
               <Button 
                 variant="outline" 
-                onClick={() => {
-                  const element = document.querySelector('[data-value="options"]');
-                  if (element instanceof HTMLElement) {
-                    element.click();
-                  }
-                }}
+                onClick={() => setActiveTab("options")}
               >
                 Edit Options
               </Button>
