@@ -109,31 +109,29 @@ const ProjectDetail = ({
             </div>
             <FadeIn direction="left">
               <div className="rounded-lg overflow-hidden shadow-2xl">
-                {id === 'destination-imagination-dms' ? (
-                  <div className="aspect-video">
+                <div className="aspect-video">
+                  {url ? (
+                    <iframe 
+                      src={url} 
+                      title={title}
+                      className="w-full h-full border-0" 
+                      loading="lazy"
+                    />
+                  ) : id === 'destination-imagination-dms' ? (
                     <iframe 
                       src="https://destination-imagination-redesign.vercel.app/" 
                       title={title}
                       className="w-full h-full border-0" 
                       loading="lazy"
                     />
-                  </div>
-                ) : image.startsWith('http') && (image.includes('shineworks') || image.includes('buckscountysoccer')) ? (
-                  <div className="aspect-video">
-                    <iframe 
+                  ) : (
+                    <img 
                       src={image} 
-                      title={title}
-                      className="w-full h-full border-0" 
-                      loading="lazy"
+                      alt={imageAlt} 
+                      className="w-full h-full object-cover" 
                     />
-                  </div>
-                ) : (
-                  <img 
-                    src={image} 
-                    alt={imageAlt} 
-                    className="w-full h-auto" 
-                  />
-                )}
+                  )}
+                </div>
               </div>
             </FadeIn>
           </div>
@@ -214,25 +212,32 @@ const ProjectDetail = ({
             // Standard layout for other projects
             <>
               <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-                {/* Primary Screenshot */}
+                {/* Primary Screenshot - Desktop View */}
                 <FadeIn direction="up" delay={0.2}>
                   <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
-                    {image.startsWith('http') && (image.includes('shineworks') || image.includes('buckscountysoccer')) ? (
-                      <div className="aspect-video">
+                    <div className="aspect-video">
+                      {url ? (
                         <iframe 
-                          src={image} 
+                          src={url} 
                           title={`${title} - Desktop View`}
                           className="w-full h-full border-0 rounded-lg" 
                           loading="lazy"
                         />
-                      </div>
-                    ) : (
-                      <img 
-                        src={image} 
-                        alt={`${title} - Desktop View`}
-                        className="w-full rounded-lg"
-                      />
-                    )}
+                      ) : id === 'destination-imagination-dms' ? (
+                        <iframe 
+                          src="https://destination-imagination-redesign.vercel.app/" 
+                          title={`${title} - Desktop View`}
+                          className="w-full h-full border-0 rounded-lg" 
+                          loading="lazy"
+                        />
+                      ) : (
+                        <img 
+                          src={image} 
+                          alt={`${title} - Desktop View`}
+                          className="w-full h-full object-cover rounded-lg"
+                        />
+                      )}
+                    </div>
                     <p className="text-center mt-4 text-gray-600">
                       Desktop view
                     </p>
@@ -242,22 +247,29 @@ const ProjectDetail = ({
                 {/* Secondary Screenshot - Mobile View */}
                 <FadeIn direction="up" delay={0.4}>
                   <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
-                    {image.startsWith('http') && (image.includes('shineworks') || image.includes('buckscountysoccer')) ? (
-                      <div className="aspect-[9/16] max-w-[300px] mx-auto">
+                    <div className="aspect-[9/16] max-w-[300px] mx-auto">
+                      {url ? (
                         <iframe 
-                          src={image} 
+                          src={url} 
                           title={`${title} - Mobile View`}
                           className="w-full h-full border-0 rounded-lg" 
                           loading="lazy"
                         />
-                      </div>
-                    ) : (
-                      <img 
-                        src={image} 
-                        alt={`${title} - Responsive Mobile View`}
-                        className="w-full rounded-lg"
-                      />
-                    )}
+                      ) : id === 'destination-imagination-dms' ? (
+                        <iframe 
+                          src="https://destination-imagination-redesign.vercel.app/" 
+                          title={`${title} - Mobile View`}
+                          className="w-full h-full border-0 rounded-lg" 
+                          loading="lazy"
+                        />
+                      ) : (
+                        <img 
+                          src={image} 
+                          alt={`${title} - Responsive Mobile View`}
+                          className="w-full h-full object-cover rounded-lg"
+                        />
+                      )}
+                    </div>
                     <p className="text-center mt-4 text-gray-600">
                       Responsive mobile design
                     </p>
@@ -390,27 +402,12 @@ const ProjectDetail = ({
                   <Link href={`/portfolio/${project.id}`} className="block group cursor-pointer h-full">
                     <div className="relative overflow-hidden rounded-lg shadow-md h-full bg-white border border-gray-100">
                       <div className="aspect-video overflow-hidden">
-                        {project.id === 'destination-imagination-dms' ? (
-                          <iframe 
-                            src="https://destination-imagination-redesign.vercel.app/" 
-                            title={project.title}
-                            className="w-full h-full border-0" 
-                            loading="lazy"
-                          />
-                        ) : project.image.startsWith('http') && (project.image.includes('shineworks') || project.image.includes('buckscountysoccer')) ? (
-                          <iframe 
-                            src={project.image} 
-                            title={project.title}
-                            className="w-full h-full border-0" 
-                            loading="lazy"
-                          />
-                        ) : (
-                          <img
-                            src={project.image}
-                            alt={project.title}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          />
-                        )}
+                        {/* Keep using static images for the related projects thumbnails */}
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
                       </div>
                       <div className="p-5">
                         <h3 className="font-bold text-lg text-gray-900 group-hover:text-primary transition-colors">
