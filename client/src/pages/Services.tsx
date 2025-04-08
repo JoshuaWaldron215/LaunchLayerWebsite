@@ -5,6 +5,12 @@ import ServiceCard from "@/components/ServiceCard";
 import SEO from "@/components/SEO";
 import CostCalculator from "@/components/CostCalculator";
 import FAQAccordion from "@/components/FAQAccordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { 
   FadeIn, 
   ScaleIn, 
@@ -172,7 +178,8 @@ const Services = () => {
                 </p>
               </div>
               
-              <div className="max-w-2xl mx-auto">
+              {/* Desktop view (md and up) - Always expanded */}
+              <div className="max-w-2xl mx-auto hidden md:block">
                 <Stagger staggerDelay={0.2}>
                   <div className="flex flex-col space-y-4">
                     <StaggerItem direction="right">
@@ -232,6 +239,67 @@ const Services = () => {
                     </StaggerItem>
                   </div>
                 </Stagger>
+              </div>
+              
+              {/* Mobile view (smaller than md) - Collapsible accordion */}
+              <div className="max-w-2xl mx-auto md:hidden">
+                <Accordion type="single" collapsible className="w-full space-y-4">
+                  <AccordionItem value="analytics" className="border border-gray-200 rounded-lg overflow-hidden">
+                    <AccordionTrigger className="px-4 py-3 hover:no-underline hover:bg-gray-50">
+                      <div className="flex justify-between items-center w-full pr-2">
+                        <div>
+                          <h4 className="font-medium text-left">Analytics Reporting</h4>
+                          <p className="text-accent font-semibold text-sm text-left">$20/month</p>
+                        </div>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-4 pb-3 text-gray-600">
+                      <p className="text-gray-500 text-sm">Monthly Google Analytics summary</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                  
+                  <AccordionItem value="hosting" className="border border-gray-200 rounded-lg overflow-hidden">
+                    <AccordionTrigger className="px-4 py-3 hover:no-underline hover:bg-gray-50">
+                      <div className="flex justify-between items-center w-full pr-2">
+                        <div>
+                          <h4 className="font-medium text-left">Hosting Setup</h4>
+                          <p className="text-accent font-semibold text-sm text-left">$50 – $75 (one-time)</p>
+                        </div>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-4 pb-3 text-gray-600">
+                      <p className="text-gray-500 text-sm">Domain configuration, server setup, and deployment</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                  
+                  <AccordionItem value="seo" className="border border-gray-200 rounded-lg overflow-hidden">
+                    <AccordionTrigger className="px-4 py-3 hover:no-underline hover:bg-gray-50">
+                      <div className="flex justify-between items-center w-full pr-2">
+                        <div>
+                          <h4 className="font-medium text-left">SEO Starter Pack</h4>
+                          <p className="text-accent font-semibold text-sm text-left">$50 – $75 (one-time)</p>
+                        </div>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-4 pb-3 text-gray-600">
+                      <p className="text-gray-500 text-sm">Keywords, meta tags, image alt text, Google indexing</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                  
+                  <AccordionItem value="maintenance" className="border border-gray-200 rounded-lg overflow-hidden">
+                    <AccordionTrigger className="px-4 py-3 hover:no-underline hover:bg-gray-50">
+                      <div className="flex justify-between items-center w-full pr-2">
+                        <div>
+                          <h4 className="font-medium text-left">Monthly Maintenance</h4>
+                          <p className="text-accent font-semibold text-sm text-left">$50 – $75/month</p>
+                        </div>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-4 pb-3 text-gray-600">
+                      <p className="text-gray-500 text-sm">Regular updates, security patches, and content changes</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </div>
             </div>
           </FadeIn>
