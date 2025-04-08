@@ -236,6 +236,20 @@ const Services = () => {
                         <div className="text-accent font-semibold">$50 – $75/month</div>
                       </motion.div>
                     </StaggerItem>
+
+                    <StaggerItem direction="right">
+                      <motion.div 
+                        className="flex justify-between items-center p-4 border-b border-gray-200"
+                        whileHover={{ backgroundColor: "rgba(243, 244, 246, 0.5)" }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <div>
+                          <h4 className="font-medium">Rush Delivery</h4>
+                          <p className="text-gray-500 text-sm">Need your site fast? Get prioritized delivery in 48–72 hours</p>
+                        </div>
+                        <div className="text-accent font-semibold">$75 – $125 (one-time)</div>
+                      </motion.div>
+                    </StaggerItem>
                   </div>
                 </Stagger>
               </div>
@@ -296,6 +310,20 @@ const Services = () => {
                     </AccordionTrigger>
                     <AccordionContent className="px-4 pb-3 text-gray-600">
                       <p className="text-gray-500 text-sm">Regular updates, security patches, and content changes</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                  
+                  <AccordionItem value="rush" className="border border-gray-200 rounded-lg overflow-hidden">
+                    <AccordionTrigger className="px-4 py-3 hover:no-underline hover:bg-gray-50">
+                      <div className="flex justify-between items-center w-full pr-2">
+                        <div>
+                          <h4 className="font-medium text-left">Rush Delivery</h4>
+                          <p className="text-accent font-semibold text-sm text-left">$75 – $125 (one-time)</p>
+                        </div>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-4 pb-3 text-gray-600">
+                      <p className="text-gray-500 text-sm">Need your site fast? Get prioritized delivery in 48–72 hours</p>
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>

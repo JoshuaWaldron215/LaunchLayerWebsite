@@ -3,7 +3,7 @@ export const services = [
   {
     title: "Starter Package",
     description: "Perfect for small businesses looking to establish a simple online presence.",
-    price: "$150 – $250",
+    price: "$125 – $175",
     icon: "fas fa-rocket",
     popular: false,
     features: [
@@ -18,7 +18,7 @@ export const services = [
   {
     title: "Standard Package",
     description: "Ideal for businesses requiring a complete web presence with essential features.",
-    price: "$300 – $500",
+    price: "$250 – $450",
     icon: "fas fa-star",
     popular: true,
     features: [
@@ -33,7 +33,7 @@ export const services = [
   {
     title: "Premium Package",
     description: "Comprehensive solution for established businesses with advanced needs.",
-    price: "$700 – $1050+",
+    price: "$600 – $900+",
     icon: "fas fa-crown",
     popular: false,
     features: [
