@@ -1,10 +1,9 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { services, features, faqs } from "@/lib/data";
+import { services, features } from "@/lib/data";
 import ServiceCard from "@/components/ServiceCard";
 import SEO from "@/components/SEO";
 import CostCalculator from "@/components/CostCalculator";
-import FAQAccordion from "@/components/FAQAccordion";
 import {
   Accordion,
   AccordionContent,
@@ -323,17 +322,6 @@ const Services = () => {
           <FadeIn direction="up" delay={0.4}>
             <CostCalculator />
           </FadeIn>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section id="faq" className="py-20 px-8 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <FAQAccordion 
-            faqs={faqs} 
-            title="Frequently Asked Questions"
-            description="Get answers to common questions about our web development services and process"
-          />
         </div>
       </section>
 
