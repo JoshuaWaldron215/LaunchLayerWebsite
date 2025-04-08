@@ -182,13 +182,13 @@ const Services = () => {
                         transition={{ duration: 0.2 }}
                       >
                         <div>
-                          <h4 className="font-medium">Monthly Maintenance</h4>
-                          <p className="text-gray-500 text-sm">Regular updates, security patches, and content changes</p>
+                          <h4 className="font-medium">Analytics Reporting</h4>
+                          <p className="text-gray-500 text-sm">Monthly Google Analytics summary</p>
                         </div>
-                        <div className="text-accent font-semibold">$50 – $75/month</div>
+                        <div className="text-accent font-semibold">$20/month</div>
                       </motion.div>
                     </StaggerItem>
-                    
+
                     <StaggerItem direction="right">
                       <motion.div 
                         className="flex justify-between items-center p-4 border-b border-gray-200"
@@ -224,10 +224,10 @@ const Services = () => {
                         transition={{ duration: 0.2 }}
                       >
                         <div>
-                          <h4 className="font-medium">Analytics Reporting</h4>
-                          <p className="text-gray-500 text-sm">Monthly Google Analytics summary</p>
+                          <h4 className="font-medium">Monthly Maintenance</h4>
+                          <p className="text-gray-500 text-sm">Regular updates, security patches, and content changes</p>
                         </div>
-                        <div className="text-accent font-semibold">$20/month</div>
+                        <div className="text-accent font-semibold">$50 – $75/month</div>
                       </motion.div>
                     </StaggerItem>
                   </div>
