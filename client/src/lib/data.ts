@@ -4,6 +4,7 @@ export const services = [
     title: "Starter Package",
     description: "Perfect for small businesses looking to establish a simple online presence.",
     price: "$125 – $175",
+    deliveryTime: "3–5 business days",
     icon: "fas fa-rocket",
     popular: false,
     features: [
@@ -19,6 +20,7 @@ export const services = [
     title: "Standard Package",
     description: "Ideal for businesses requiring a complete web presence with essential features.",
     price: "$250 – $450",
+    deliveryTime: "7–10 business days",
     icon: "fas fa-star",
     popular: true,
     features: [
@@ -34,6 +36,7 @@ export const services = [
     title: "Premium Package",
     description: "Comprehensive solution for established businesses with advanced needs.",
     price: "$600 – $900+",
+    deliveryTime: "10–14+ business days",
     icon: "fas fa-crown",
     popular: false,
     features: [

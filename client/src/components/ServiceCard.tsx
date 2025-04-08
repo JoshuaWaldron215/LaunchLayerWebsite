@@ -14,6 +14,7 @@ interface ServiceCardProps {
   icon: string;
   popular?: boolean;
   features: ServiceFeature[];
+  deliveryTime?: string;
 }
 
 const ServiceCard: FC<ServiceCardProps> = ({
@@ -23,6 +24,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
   icon,
   popular = false,
   features,
+  deliveryTime,
 }) => {
   return (
     <div className={cn(
@@ -42,6 +44,12 @@ const ServiceCard: FC<ServiceCardProps> = ({
       <div className="bg-secondary p-4 rounded mb-6">
         <div className="text-3xl font-bold text-accent mb-2">{price}</div>
         <p className="text-sm text-gray-600">One-time payment</p>
+        {deliveryTime && (
+          <div className="mt-2 flex items-center">
+            <i className="fas fa-clock text-gray-500 mr-2 text-sm"></i>
+            <p className="text-sm text-gray-600">{deliveryTime}</p>
+          </div>
+        )}
       </div>
       <ul className="space-y-3 mb-8">
         {features.map((feature, index) => (

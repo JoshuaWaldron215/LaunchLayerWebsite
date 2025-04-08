@@ -145,6 +145,7 @@ const Services = () => {
                       icon={service.icon}
                       popular={service.popular}
                       features={service.features}
+                      deliveryTime={service.deliveryTime}
                     />
                   </ScaleIn>
                 </StaggerItem>
