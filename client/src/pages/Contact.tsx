@@ -41,9 +41,14 @@ const Contact = () => {
       <SEO 
         title="Contact LaunchLayer | Philadelphia Web Development Services"
         description="Get in touch with LaunchLayer's web development team in Philadelphia. Request a quote for your custom website project or call us at (215) 207-5885."
-        keywords="contact web developer, Philadelphia web design contact, website quote, custom website pricing, LaunchLayer contact, web development consultation"
+        keywords="contact web developer, Philadelphia web design contact, website quote, custom website pricing, LaunchLayer contact, web development consultation, affordable web design quote, Pennsylvania web developer"
         ogTitle="Contact LaunchLayer | Get a Free Web Development Quote"
         ogDescription="Ready to launch your website? Contact our Philadelphia-based web development team for a free quote. Call (215) 207-5885 or fill out our contact form."
+        ogImage="/contact-og-image.svg"
+        twitterTitle="Contact LaunchLayer | Philadelphia Web Development"
+        twitterDescription="Request a free quote for your web project with delivery in as little as 3-5 days. Fill out our simple form or call (215) 207-5885."
+        twitterImage="/contact-twitter-card.svg"
+        canonical="https://launchlayer.com/contact"
         jsonLd={contactJsonLd}
       />
       {/* Contact Header */}

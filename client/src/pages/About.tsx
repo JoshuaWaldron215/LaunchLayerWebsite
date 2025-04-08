@@ -61,9 +61,14 @@ const About = () => {
       <SEO 
         title="About LaunchLayer | Philadelphia Web Development Team"
         description="Meet Josh and Aqeel, the team behind LaunchLayer - a web development agency in Philadelphia with 5+ years of experience creating custom websites for small businesses."
-        keywords="web developer Philadelphia, about LaunchLayer, web design team, Josh Waldron, Aqeel Bacchus, web development company, responsive website designer"
+        keywords="web developer Philadelphia, about LaunchLayer, web design team, Josh Waldron, Aqeel Bacchus, web development company, responsive website designer, Pennsylvania web developers"
         ogTitle="About the LaunchLayer Team | Philadelphia Web Developers"
         ogDescription="Meet the developers behind LaunchLayer - a Philadelphia-based web development team specializing in custom websites for small businesses and entrepreneurs."
+        ogImage="/about-og-image.svg"
+        twitterTitle="Meet the LaunchLayer Web Development Team"
+        twitterDescription="Josh from Philadelphia and Aqeel from Scranton - the team behind LaunchLayer with 5+ years of experience in custom website development."
+        twitterImage="/about-twitter-card.svg"
+        canonical="https://launchlayer.com/about"
         jsonLd={aboutJsonLd}
       />
       {/* About Header */}

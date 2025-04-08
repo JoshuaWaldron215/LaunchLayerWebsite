@@ -33,16 +33,48 @@ const Home = () => {
       "logo": {
         "@type": "ImageObject",
         "url": "https://launchlayer.com/logo.png"
-      }
-    }
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Philadelphia",
+        "addressRegion": "PA",
+        "postalCode": "19103",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-215-207-5885",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        "https://twitter.com/launchlayer",
+        "https://www.facebook.com/launchlayer",
+        "https://www.linkedin.com/company/launchlayer"
+      ]
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "lowPrice": "125",
+      "highPrice": "1050",
+      "offerCount": "3"
+    },
+    "keywords": "affordable web design, freelance web developer, small business websites, responsive design, custom websites, Philadelphia web developer"
   };
 
   return (
     <main>
       <SEO 
-        title="LaunchLayer - Professional Web Development Services in Philadelphia"
-        description="LaunchLayer provides expert web development solutions for businesses in Philadelphia. Launch your digital presence with our custom websites and applications."
-        keywords="web development Philadelphia, custom websites, business websites, responsive design, web applications, Philadelphia web design"
+        title="LaunchLayer - Professional Web Development Services in Philadelphia, PA"
+        description="LaunchLayer provides affordable custom web development solutions for small businesses in Philadelphia. Our responsive websites help you establish a powerful online presence."
+        keywords="web development Philadelphia, custom websites, business websites, responsive design, web applications, Philadelphia web design, affordable web design, freelance web developer, small business websites"
+        ogTitle="LaunchLayer - Expert Web Development in Philadelphia"
+        ogDescription="Custom websites from $125-$1050 for small businesses and creators. Get an engaging, mobile-friendly website designed to convert visitors into customers."
+        ogImage="/og-image.svg"
+        twitterTitle="LaunchLayer - Professional Web Development in Philadelphia"
+        twitterDescription="From landing pages to e-commerce stores, we build affordable, high-converting websites for small businesses."
+        twitterImage="/twitter-card.svg"
+        canonical="https://launchlayer.com/"
         jsonLd={homeJsonLd}
       />
       {/* Hero Section */}
@@ -88,8 +120,11 @@ const Home = () => {
                 <ParallaxScroll direction="down" speed={0.15}>
                   <img 
                     src="https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                    alt="Web development team working together" 
+                    alt="LaunchLayer web development team collaborating on custom website design for Philadelphia small business clients" 
                     className="rounded-lg shadow-lg w-full max-w-md"
+                    loading="eager"
+                    width="600"
+                    height="400"
                   />
                 </ParallaxScroll>
               </ScaleIn>

@@ -50,11 +50,16 @@ const Services = () => {
   return (
     <main className="pt-24">
       <SEO 
-        title="Web Development Services | LaunchLayer Philadelphia"
-        description="Affordable web development packages from $150-$1050. Custom websites, e-commerce solutions, and monthly maintenance options for Philadelphia businesses."
-        keywords="web development services, website packages, affordable web design, Philadelphia web developer, business website cost, e-commerce website, monthly website maintenance"
-        ogTitle="Professional Web Development Services & Packages | LaunchLayer"
-        ogDescription="Choose from our Starter ($150-$250), Standard ($300-$500), or Premium ($700-$1050+) packages. Custom web solutions for Philadelphia businesses of all sizes."
+        title="Web Development Services & Pricing | LaunchLayer Philadelphia"
+        description="Affordable web development packages starting from $125. Choose from Starter (3-5 days), Standard (7-10 days), or Premium (10-14+ days) plans. Custom websites for Philadelphia businesses."
+        keywords="web development services, website packages, affordable web design, Philadelphia web developer, business website cost, e-commerce website, monthly website maintenance, website pricing, rush delivery, hosting services"
+        ogTitle="Web Development Services & Packages | LaunchLayer Philadelphia"
+        ogDescription="Choose from our Starter ($125-$175 in 3-5 days), Standard ($250-$450 in 7-10 days), or Premium ($600-$900+ in 10-14+ days) packages. Custom web solutions for businesses of all sizes."
+        ogImage="/services-og-image.svg"
+        twitterTitle="Web Development Services & Pricing | LaunchLayer Philadelphia"
+        twitterDescription="Affordable custom websites with transparent pricing and quick delivery timeframes. Starting at just $125 for small businesses."
+        twitterImage="/services-twitter-card.svg"
+        canonical="https://launchlayer.com/services"
         jsonLd={servicesJsonLd}
       />
       {/* Services Header */}

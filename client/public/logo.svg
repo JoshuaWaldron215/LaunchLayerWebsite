@@ -1,0 +1,8 @@
+<svg width="180" height="60" viewBox="0 0 180 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="60" height="60" rx="6" fill="#2B6CB0"/>
+  <path d="M12 30 L18 24 L24 30 L30 24 L36 30 L42 24 L48 30" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12 38 L18 32 L24 38 L30 32 L36 38 L42 32 L48 38" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- LaunchLayer text -->
+  <text x="70" y="36" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#1A202C">LaunchLayer</text>
+</svg>

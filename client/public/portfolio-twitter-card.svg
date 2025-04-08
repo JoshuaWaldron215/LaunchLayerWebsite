@@ -1,0 +1,17 @@
+<svg width="800" height="418" viewBox="0 0 800 418" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="418" fill="#F8F9FA"/>
+  <rect x="0" y="0" width="800" height="418" fill="#2B6CB0" opacity="0.05"/>
+  <rect x="50" y="50" width="700" height="318" rx="8" fill="white" stroke="#2B6CB0" stroke-width="2"/>
+  <text x="400" y="120" font-family="Inter, sans-serif" font-size="42" font-weight="700" text-anchor="middle" fill="#1A202C">Our Portfolio</text>
+  <text x="400" y="170" font-family="Inter, sans-serif" font-size="24" font-weight="400" text-anchor="middle" fill="#4A5568">See our latest web development work</text>
+  
+  <!-- Simple project indicators -->
+  <circle cx="260" cy="250" r="40" fill="#2B6CB0" opacity="0.2" stroke="#2B6CB0" stroke-width="2"/>
+  <text x="260" y="258" font-family="Inter, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="#2B6CB0">01</text>
+  
+  <circle cx="400" cy="250" r="40" fill="#2B6CB0" opacity="0.2" stroke="#2B6CB0" stroke-width="2"/>
+  <text x="400" y="258" font-family="Inter, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="#2B6CB0">02</text>
+  
+  <circle cx="540" cy="250" r="40" fill="#2B6CB0" opacity="0.2" stroke="#2B6CB0" stroke-width="2"/>
+  <text x="540" y="258" font-family="Inter, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="#2B6CB0">03</text>
+</svg>

@@ -1,9 +1,9 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 import { portfolioItems } from "@/lib/data";
 import PortfolioItem from "@/components/PortfolioItem";
 import SocialProofSection from "@/components/SocialProofSection";
+import SEO from "@/components/SEO";
 import { 
   FadeIn, 
   ScaleIn, 
@@ -40,16 +40,23 @@ const Portfolio = () => {
     }
   };
 
-  // Set document title directly
-  useEffect(() => {
-    document.title = "Web Development Portfolio | LaunchLayer Philadelphia";
-    return () => {
-      document.title = "LaunchLayer - Professional Web Development Services";
-    };
-  }, []);
+  // Note: We no longer need this useEffect since we're using the SEO component
 
   return (
     <main className="pt-24">
+      <SEO 
+        title="Web Development Portfolio | LaunchLayer Philadelphia" 
+        description="View our portfolio of successful web development projects including ShineWorks Detailing, Bucks County Soccer Tournament, and Destination Imagination DMS Redesign."
+        keywords="web development portfolio, website examples, web design projects, Philadelphia web developer portfolio, custom website showcase, responsive website examples"
+        ogTitle="Web Development Portfolio | LaunchLayer Philadelphia"
+        ogDescription="50+ successful web projects with 99% client satisfaction. Browse our portfolio to see how we've helped businesses establish a powerful online presence."
+        ogImage="/portfolio-og-image.svg"
+        twitterTitle="LaunchLayer Portfolio | Custom Website Examples"
+        twitterDescription="See our latest web development projects and discover what we can create for your business. From simple landing pages to complex web applications."
+        twitterImage="/portfolio-twitter-card.svg"
+        canonical="https://launchlayer.com/portfolio"
+        jsonLd={portfolioJsonLd}
+      />
       {/* Portfolio Header */}
       <section className="py-20 px-8 bg-gradient-to-br from-secondary to-primary overflow-hidden">
         <div className="max-w-7xl mx-auto text-center">
