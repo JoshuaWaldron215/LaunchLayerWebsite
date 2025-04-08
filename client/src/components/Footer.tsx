@@ -59,7 +59,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <i className="fas fa-envelope mr-3"></i>
-                <span>hello@launchlayer.com</span>
+                <span>launchlayer@gmail.com</span>
               </li>
               <li className="flex items-center">
                 <i className="fas fa-phone-alt mr-3"></i>

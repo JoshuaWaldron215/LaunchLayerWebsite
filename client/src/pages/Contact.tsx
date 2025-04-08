@@ -26,7 +26,7 @@ const Contact = () => {
         "addressCountry": "US"
       },
       "telephone": "(215) 207-5885",
-      "email": "hello@launchlayer.com",
+      "email": "launchlayer@gmail.com",
       "url": "https://launchlayer.com",
       "sameAs": [
         "https://twitter.com/launchlayer",
@@ -95,7 +95,7 @@ const Contact = () => {
                       { 
                         icon: "fas fa-envelope", 
                         title: "Email", 
-                        text: "hello@launchlayer.com" 
+                        text: "launchlayer@gmail.com" 
                       },
                       { 
                         icon: "fas fa-phone-alt", 
