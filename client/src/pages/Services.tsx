@@ -202,6 +202,34 @@ const Services = () => {
                         <div className="text-accent font-semibold">$50 – $75 (one-time)</div>
                       </motion.div>
                     </StaggerItem>
+
+                    <StaggerItem direction="right">
+                      <motion.div 
+                        className="flex justify-between items-center p-4 border-b border-gray-200"
+                        whileHover={{ backgroundColor: "rgba(243, 244, 246, 0.5)" }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <div>
+                          <h4 className="font-medium">SEO Starter Pack</h4>
+                          <p className="text-gray-500 text-sm">Keywords, meta tags, image alt text, Google indexing</p>
+                        </div>
+                        <div className="text-accent font-semibold">$50 – $75 (one-time)</div>
+                      </motion.div>
+                    </StaggerItem>
+
+                    <StaggerItem direction="right">
+                      <motion.div 
+                        className="flex justify-between items-center p-4 border-b border-gray-200"
+                        whileHover={{ backgroundColor: "rgba(243, 244, 246, 0.5)" }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <div>
+                          <h4 className="font-medium">Analytics Reporting</h4>
+                          <p className="text-gray-500 text-sm">Monthly Google Analytics summary</p>
+                        </div>
+                        <div className="text-accent font-semibold">$20/month</div>
+                      </motion.div>
+                    </StaggerItem>
                   </div>
                 </Stagger>
               </div>
